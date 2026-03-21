@@ -2,6 +2,7 @@ import os
 import sys
 import platform
 import urllib.request
+import urllib.error
 import json
 import zipfile
 import tarfile
@@ -21,15 +22,14 @@ def get_platform_info():
         arch = 'aarch64'
     else:
         arch = 'x86_64' # fallback
-
-    # mdbook & mdbook-blame specific suffixes
+        
     if system == 'windows':
-        return f"{arch}-pc-windows-msvc.zip", ".exe"
+        return [f"{arch}-pc-windows-msvc.zip"], ".exe"
     elif system == 'darwin':
-        return f"{arch}-apple-darwin.tar.gz", ""
+        return [f"{arch}-apple-darwin.tar.gz"], ""
     else:
         # Default Linux
-        return f"{arch}-unknown-linux-gnu.tar.gz", ""
+        return [f"{arch}-unknown-linux-gnu.tar.gz", f"{arch}-unknown-linux-musl.tar.gz"], ""
 
 def download_and_extract(url, extract_to, is_zip):
     print(f"Downloading {url}...")
@@ -58,8 +58,7 @@ def ensure_tools():
     if not os.path.exists(BIN_DIR):
         os.makedirs(BIN_DIR)
 
-    suffix, ext = get_platform_info()
-    is_zip = suffix.endswith('.zip')
+    suffixes, ext = get_platform_info()
 
     metadata_path = os.path.join(BIN_DIR, "tools_meta.json")
     metadata = {}
@@ -98,10 +97,32 @@ def ensure_tools():
                     print(f"Failed to fetch latest release for {tool_name}: {e}")
                     resolved_version = "v0.1.2" # default safe fallback
 
-            asset_name = tool['asset_name'].format(version=resolved_version, suffix=suffix)
-            url = f"https://github.com/{tool['repo']}/releases/download/{resolved_version}/{asset_name}"
-            download_and_extract(url, BIN_DIR, is_zip)
-            
+            download_success = False
+            last_err_msg = ""
+            for suffix in suffixes:
+                is_zip = suffix.endswith('.zip')
+                asset_name = tool['asset_name'].format(version=resolved_version, suffix=suffix)
+                url = f"https://github.com/{tool['repo']}/releases/download/{resolved_version}/{asset_name}"
+                
+                try:
+                    download_and_extract(url, BIN_DIR, is_zip)
+                    download_success = True
+                    break
+                except urllib.error.HTTPError as e:
+                    last_err_msg = f"HTTP {e.code}"
+                    if e.code == 404:
+                        print(f"[{tool_name}] {asset_name} not found (404), trying next platform artifact...")
+                        continue
+                    else:
+                        break # Stop on 500 etc.
+                except Exception as e:
+                    last_err_msg = str(e)
+                    continue
+
+            if not download_success:
+                print(f"[{tool_name}] Failed to download/install: {last_err_msg}")
+                continue
+
             metadata[tool_name] = {
                 "version_req": version_req,
                 "version_resolved": resolved_version
