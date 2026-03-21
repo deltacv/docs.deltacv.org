@@ -5,6 +5,6 @@
 
 MDBOOK_MODULES = {
     "landing": "",           # Builds directly into /dist
-    "eocvsim": "eocvsim",         # Builds into /dist/eocvsim
+    "eocv-sim": "eocv-sim",         # Builds into /dist/eocvsim
     "papervision": "papervision", # Builds into /dist/papervision
 }
