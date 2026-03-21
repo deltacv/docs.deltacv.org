@@ -28,6 +28,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../custom-ad60efe8.css">
 
 
         <!-- Provide site root and default themes to javascript -->
@@ -35,7 +36,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-8bcff6fe.js";
+            window.path_to_searchindex_js = "../searchindex-4471a987.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-da27efac.js"></script>
@@ -183,15 +184,15 @@
 <li>Download VS Code in <a href="https://code.visualstudio.com">here</a> if you haven’t already.</li>
 <li>Open VS Code and install the <a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack">Extension Pack for Java</a>, going to the extensions section, search for “java” in the search box at the top and find the extension that looks like the following screenshot.</li>
 </ol>
-<p><img src="../.gitbook/assets/extension-tab.png" alt=""></p>
-<p><img src="../.gitbook/assets/java-extension-pack.png" alt=""></p>
+<p><img src="../assets/extension-tab.png" alt=""></p>
+<p><img src="../assets/java-extension-pack.png" alt=""></p>
 <ol>
 <li>Click on the blue “Install” button and restart VS Code.</li>
 <li>Do the steps specified in the <a href="vscode-and-intellij.html#creating-a-gradle-workspace"><strong>Creating a Gradle workspace</strong></a> section</li>
 <li>Once you have done the steps in that section, go back to VS Code. If it wasn’t opened automatically by EOCV-Sim, open it manually and select the folder you created in EOCV-Sim.</li>
 <li>If the language support plugin asks to import the project on the bottom right, click on yes.</li>
 </ol>
-<p><img src="../.gitbook/assets/screenshot_vscode_javaproject.png" alt=""></p>
+<p><img src="../assets/screenshot_vscode_javaproject.png" alt=""></p>
 <ol>
 <li>Wait for the import process to finish; see the tiny loading icon in the bottom right.</li>
 <li>Pop up the <code>src/main/java</code> folder. This is where you will put your pipelines.</li>
@@ -220,19 +221,13 @@ public class &lt;Name Here&gt; extends OpenCvPipeline {
 <li>Do the steps specified in the<a href="vscode-and-intellij.html#creating-a-gradle-workspace"> Creating a Gradle workspace</a> section</li>
 <li>Open IntelliJ IDEA and import the Gradle workspace you just created:</li>
 </ol>
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption>
-<p>Select the "Open" option and navigate to find your workspace folder</p>
-</figcaption></figure>
+<p><img src="../assets/image (3).png" alt="Select the “Open” option and navigate to find your workspace folder"></p>
 <p>Alternatively, if you’re not at the starter screen of IntelliJ IDEA, you can also do the following:</p>
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption>
-<p>Import the Gradle workspace with the "Project from Existing Sources" menu option</p>
-</figcaption></figure>
+<p><img src="../assets/image (2).png" alt="Import the Gradle workspace with the “Project from Existing Sources” menu option"></p>
 <ol start="3">
 <li>Navigate through the src/main/java folders, you’ll then find the packages in which you’ll be able to start adding your own pipelines</li>
 </ol>
-<figure><img src="../.gitbook/assets/image (5).png" alt="" width="413"><figcaption>
-<p>Gradle workspace imported into IntelliJ</p>
-</figcaption></figure>
+<p><img src="../assets/image (5).png" alt="Gradle workspace imported into IntelliJ"></p>
 <ol start="4">
 <li>Create a new Java class anywhere within the src/main/java folder. To create a pipeline, you can start with this template</li>
 </ol>
@@ -256,11 +251,11 @@ public class &lt;Name Here&gt; extends OpenCvPipeline {
 <li>Open EOCV-Sim (follow <a href="../downloading-eocv-sim.html#running-eocv-sim">this page</a> if needed)</li>
 <li>In the top bar menu, go to <strong>Workspace -&gt; External -&gt; Create Gradle Workspace</strong></li>
 </ol>
-<p><img src="../.gitbook/assets/create-gradle-workspace.png" alt=""></p>
+<p><img src="../assets/create-gradle-workspace.png" alt=""></p>
 <ol>
 <li>In the file explorer, create a new empty folder or select one that already exists but has no files. You can’t use a folder that already has files in it. Click on the folder icon with a “+” in the top, and give the new folder a name.</li>
 </ol>
-<p><img src="../.gitbook/assets/create-folder-screenshot.png" alt=""></p>
+<p><img src="../assets/create-folder-screenshot.png" alt=""></p>
 <ol>
 <li>Select the newly created folder and click on “open”. </li>
 </ol>
@@ -269,6 +264,14 @@ public class &lt;Name Here&gt; extends OpenCvPipeline {
 <li>If you were following the VS Code guide, click on “Yes” once it asks if you want to open it, and go back to <a href="vscode-and-intellij.html#vs-code">step #5</a>.</li>
 <li>If you were following the IntelliJ IDEA guide, click on “No” and go back to step #2.</li>
 </ul>
+<details>
+<summary>This article was last modified...</summary>
+<blockquote>
+<p><em>On 2026-03-21 01:07:14 -06:00<br></em>
+<em>By Sebastian Erives<br></em>
+<em>See it here: <a href="https://github.com/deltacv/docs.deltacv.org/commit/9f222a6ce64832a9c20251660c897366ca06ec74"><code>9f222a6ce64832a9c20251660c897366ca06ec74</code></a><br></em></p>
+</blockquote>
+</details>
 
                     </main>
 
@@ -305,22 +308,6 @@ public class &lt;Name Here&gt; extends OpenCvPipeline {
         <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
         <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
         <script>

@@ -28,6 +28,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="custom-ad60efe8.css">
 
 
         <!-- Provide site root and default themes to javascript -->
@@ -35,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-8bcff6fe.js";
+            window.path_to_searchindex_js = "searchindex-4471a987.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-da27efac.js"></script>
@@ -179,7 +180,7 @@
 <p>EOCV-Sim requires Java 11 at minimum. Any newer version should work fine. You can download it from <a href="https://www.oracle.com/java/technologies/javase-downloads.html">the Oracle webpage</a>.</p>
 <p><strong>2.</strong> <a href="https://github.com/deltacv/EOCV-Sim/releases/latest"><strong>Click on this link</strong> </a><strong>to go to the latest release in the EOCV-Sim GitHub repo.</strong></p>
 <p><strong>3.</strong> <strong>Download the jar file, named <code>EOCV-Sim-X.X.X-all.jar</code>, available at the bottom on the “assets” section:</strong></p>
-<p><img src=".gitbook/assets/example-release.png" alt="Example screenshot of the latest release as of 17/09/21"></p>
+<p><img src="assets/example-release.png" alt="Example screenshot of the latest release as of 17/09/21"></p>
 <p><em>(Note that the screenshot might not be what is actually displayed when you open the page, as new releases</em> come out<em>. The EOCV-Sim-all artifact shall always be available to download from any release)</em></p>
 <h2 id="running-eocv-sim"><a class="header" href="#running-eocv-sim">Running EOCV-Sim</a></h2>
 <p>Once the jar file is downloaded, you can simply double-click it to run it, just like any other executable file.</p>
@@ -189,6 +190,14 @@
 </code></pre>
 <p>Replacing the X.X.X by the version respectively, e.g 3.1.0</p>
 <h2 id="interested-in-papervision-click-here-to-go-back-to-the-documentation-page"><a class="header" href="#interested-in-papervision-click-here-to-go-back-to-the-documentation-page">Interested in PaperVision? <a href="https://app.gitbook.com/s/Fmz3GSY1piwyk8EqDogS/installing-papervision">Click here to go back to the documentation page.</a></a></h2>
+<details>
+<summary>This article was last modified...</summary>
+<blockquote>
+<p><em>On 2026-03-21 01:07:14 -06:00<br></em>
+<em>By Sebastian Erives<br></em>
+<em>See it here: <a href="https://github.com/deltacv/docs.deltacv.org/commit/9f222a6ce64832a9c20251660c897366ca06ec74"><code>9f222a6ce64832a9c20251660c897366ca06ec74</code></a><br></em></p>
+</blockquote>
+</details>
 
                     </main>
 
@@ -225,22 +234,6 @@
         <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
         <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
         <script>

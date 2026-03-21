@@ -1,7 +1,12 @@
 import os
+import subprocess
 from livereload import Server
 import build  # Import the existing build.py script
 import modules
+import download_tools
+
+# Ensure robust local local testing binaries
+download_tools.ensure_tools()
 
 def run_build():
     print("\n[serve.py] Change detected or initial build! Rebuilding docs...")

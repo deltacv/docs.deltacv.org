@@ -6,3 +6,28 @@ main img {
     border-radius: 8px; /* Optional touch of styling */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional touch of styling */
 }
+
+/* mdbook-blame styling */
+main > details:last-child {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--table-border-color);
+    font-size: 0.85em;
+}
+
+main > details:last-child > summary {
+    cursor: pointer;
+    font-style: italic;
+    color: var(--sidebar-fg);
+    opacity: 0.8;
+    user-select: none;
+    outline: none;
+}
+
+main > details:last-child > blockquote {
+    margin: 15px 0 0 0;
+    padding: 10px 15px;
+    background-color: var(--sidebar-bg);
+    border-left: 3px solid var(--table-border-color);
+    border-radius: 0 4px 4px 0;
+}

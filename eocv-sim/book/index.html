@@ -28,6 +28,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="custom-ad60efe8.css">
 
 
         <!-- Provide site root and default themes to javascript -->
@@ -35,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-8bcff6fe.js";
+            window.path_to_searchindex_js = "searchindex-4471a987.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-da27efac.js"></script>
@@ -174,20 +175,26 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <hr>
-<h2 id="description-introduction-to-eocv-sim"><a class="header" href="#description-introduction-to-eocv-sim">description: Introduction to EOCV-Sim</a></h2>
-<h1 id="welcome"><a class="header" href="#welcome">Welcome!</a></h1>
+                        <h1 id="welcome"><a class="header" href="#welcome">Welcome!</a></h1>
 <h3 id="introduction"><a class="header" href="#introduction">Introduction</a></h3>
 <p>Thank you for your interest in EOCV-Sim! (EasyOpenCV Simulator)</p>
 <p>We made this tool in hopes that it will be useful for all FTC teams seeking a way of learning and developing their seasonal OpenCV algorithms in an easy and straightforward way, while also providing some extra tools to improve the experience of developing such algorithms.</p>
 <p>The main purpose of this software is to simulate the package &amp; class structure of <a href="https://github.com/OpenFTC/EasyOpenCV">OpenFTC’s EasyOpenCV</a> and a little bit of the FTC SDK, while also providing OpenCV functionality and a simple GUI.</p>
 <p>By simulating the aforementioned structure, it allows the imports, class names, etc. to be the same as they would be if you were using the FTC SDK with EasyOpenCV, allowing you to simply copy and paste your vision code into your Android Studio project once you want to transfer it to a robot.</p>
-<p><img src=".gitbook/assets/eocvsim_screenshot_1.png" alt=""></p>
+<p><img src="assets/eocvsim_screenshot_1.png" alt=""></p>
 <p>While the main focus of this software is the FIRST Tech Challenge competition, nothing stops you from using it to solve any sort of general purpose computer vision problem :). We highly encourage people to use it as a learning tool outside of FTC, for any sort of project.</p>
 <p>We are also welcome to suggestions if you see anything that could be added or improved! <a href="https://github.com/deltacv/EOCV-Sim/issues">GitHub Issues</a> are open to suggestions and bug reports.</p>
 <h3 id="buy-me-a-coffee"><a class="header" href="#buy-me-a-coffee">Buy me a coffee</a></h3>
 <p>For the past 4 years I’ve been developing and maintaining learning tools for robotics kids to have a better understanding of programming and computer vision. Now that I’ve graduated from the robotics competition and I’m headed to college it is my goal to keep maintaining and improving these tools for future generations to keep learning, completely cost-free and open source. Your donation in <a href="https://buymeacoffee.com/serivesmejia">buy me a coffee</a> will help me maintain those goals through the following years as life gets busier.</p>
 <p>- Sebastian Erives, deltacv’s main dev</p>
+<details>
+<summary>This article was last modified...</summary>
+<blockquote>
+<p><em>On 2026-03-21 01:07:14 -06:00<br></em>
+<em>By Sebastian Erives<br></em>
+<em>See it here: <a href="https://github.com/deltacv/docs.deltacv.org/commit/9f222a6ce64832a9c20251660c897366ca06ec74"><code>9f222a6ce64832a9c20251660c897366ca06ec74</code></a><br></em></p>
+</blockquote>
+</details>
 
                     </main>
 
@@ -218,22 +225,6 @@
         <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
         <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
         <script>

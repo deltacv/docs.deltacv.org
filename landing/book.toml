@@ -3,9 +3,13 @@ title = "deltacv Docs"
 authors = ["Sebastian Erives"]
 language = "en"
 src = "src"
-
+    
 [build]
 build-dir = "../dist"
 
 [output.html]
 additional-css = ["custom.css"]
+
+[preprocessor.blame]
+source = "https://github.com/deltacv/docs.deltacv.org/commit/"
+optional = true

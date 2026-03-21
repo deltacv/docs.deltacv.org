@@ -3,9 +3,10 @@ import shutil
 import subprocess
 import sys
 import modules
-import shutil
-import subprocess
-import sys
+import download_tools
+
+# Ensure local binaries (mdbook, mdbook-blame) are downloaded and in the PATH
+download_tools.ensure_tools()
 
 def run_command(command, cwd=None):
     cmd_str = ' '.join(command)
