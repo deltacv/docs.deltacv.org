@@ -1,0 +1,84 @@
+/* Custom Landing Page Styles */
+
+.page {
+    outline: 0;
+    padding: 0 20px !important;
+}
+.content {
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+    padding-top: 20px !important;
+}
+
+/* Hero Header */
+.hero-header {
+    text-align: center;
+    padding: 40px 20px;
+}
+.hero-title {
+    /* Use mdbook's native foreground color */
+    color: var(--fg);
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+.hero-subtitle {
+    color: var(--fg);
+    font-size: 1.25rem;
+    opacity: 0.85;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Cards */
+.card-container {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding-bottom: 80px;
+}
+.landing-card {
+    flex: 1 1 300px;
+    max-width: 420px;
+    /* Use mdbook's native variables so themes (light/dark/rust/ayu) work flawlessly! */
+    background: var(--sidebar-bg); 
+    border: 1px solid var(--table-border-color);
+    border-radius: 16px;
+    padding: 32px;
+    text-decoration: none !important;
+    color: var(--fg) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.landing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    /* Make the hover border use mdbook's native link color! */
+    border-color: var(--links);
+}
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: var(--fg);
+    border-bottom: none !important; /* hide typical mdbook h2 underline */
+}
+.card-desc {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--fg);
+}

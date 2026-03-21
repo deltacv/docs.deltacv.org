@@ -1,0 +1,11 @@
+[book]
+title = "deltacv Docs"
+authors = ["Sebastian Erives"]
+language = "en"
+src = "src"
+
+[build]
+build-dir = "../dist"
+
+[output.html]
+additional-css = ["custom.css"]

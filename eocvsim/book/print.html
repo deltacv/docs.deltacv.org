@@ -1,0 +1,1238 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>EOCV-Sim Docs</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-8bcff6fe.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-da27efac.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">EOCV-Sim Docs</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="welcome-1"><a href="#welcome-1" class="header">Welcome!</a></h1>
+<hr>
+<h2 id="description-introduction-to-eocv-sim"><a class="header" href="#description-introduction-to-eocv-sim">description: Introduction to EOCV-Sim</a></h2>
+<h1 id="welcome"><a class="header" href="#welcome">Welcome!</a></h1>
+<h3 id="introduction"><a class="header" href="#introduction">Introduction</a></h3>
+<p>Thank you for your interest in EOCV-Sim! (EasyOpenCV Simulator)</p>
+<p>We made this tool in hopes that it will be useful for all FTC teams seeking a way of learning and developing their seasonal OpenCV algorithms in an easy and straightforward way, while also providing some extra tools to improve the experience of developing such algorithms.</p>
+<p>The main purpose of this software is to simulate the package &amp; class structure of <a href="https://github.com/OpenFTC/EasyOpenCV">OpenFTC’s EasyOpenCV</a> and a little bit of the FTC SDK, while also providing OpenCV functionality and a simple GUI.</p>
+<p>By simulating the aforementioned structure, it allows the imports, class names, etc. to be the same as they would be if you were using the FTC SDK with EasyOpenCV, allowing you to simply copy and paste your vision code into your Android Studio project once you want to transfer it to a robot.</p>
+<p><img src=".gitbook/assets/eocvsim_screenshot_1.png" alt=""></p>
+<p>While the main focus of this software is the FIRST Tech Challenge competition, nothing stops you from using it to solve any sort of general purpose computer vision problem :). We highly encourage people to use it as a learning tool outside of FTC, for any sort of project.</p>
+<p>We are also welcome to suggestions if you see anything that could be added or improved! <a href="https://github.com/deltacv/EOCV-Sim/issues">GitHub Issues</a> are open to suggestions and bug reports.</p>
+<h3 id="buy-me-a-coffee"><a class="header" href="#buy-me-a-coffee">Buy me a coffee</a></h3>
+<p>For the past 4 years I’ve been developing and maintaining learning tools for robotics kids to have a better understanding of programming and computer vision. Now that I’ve graduated from the robotics competition and I’m headed to college it is my goal to keep maintaining and improving these tools for future generations to keep learning, completely cost-free and open source. Your donation in <a href="https://buymeacoffee.com/serivesmejia">buy me a coffee</a> will help me maintain those goals through the following years as life gets busier.</p>
+<p>- Sebastian Erives, deltacv’s main dev</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="downloading-eocv-sim"><a class="header" href="#downloading-eocv-sim">Downloading EOCV-Sim</a></h1>
+<p><strong>1. Download and install the Java Runtime Environment or Java Development Kit if you haven’t already:</strong>  </p>
+<p>EOCV-Sim requires Java 11 at minimum. Any newer version should work fine. You can download it from <a href="https://www.oracle.com/java/technologies/javase-downloads.html">the Oracle webpage</a>.</p>
+<p><strong>2.</strong> <a href="https://github.com/deltacv/EOCV-Sim/releases/latest"><strong>Click on this link</strong> </a><strong>to go to the latest release in the EOCV-Sim GitHub repo.</strong></p>
+<p><strong>3.</strong> <strong>Download the jar file, named <code>EOCV-Sim-X.X.X-all.jar</code>, available at the bottom on the “assets” section:</strong></p>
+<p><img src=".gitbook/assets/example-release.png" alt="Example screenshot of the latest release as of 17/09/21"></p>
+<p><em>(Note that the screenshot might not be what is actually displayed when you open the page, as new releases</em> come out<em>. The EOCV-Sim-all artifact shall always be available to download from any release)</em></p>
+<h2 id="running-eocv-sim"><a class="header" href="#running-eocv-sim">Running EOCV-Sim</a></h2>
+<p>Once the jar file is downloaded, you can simply double-click it to run it, just like any other executable file.</p>
+<p>You can also run the jar file from the command line. </p>
+<p>Navigate to the folder where the EOCV-Sim jar is stored in, using the <code>cd</code> command. Then, invoke the java command passing the file name as follows:</p>
+<pre><code>java -jar "EOCV-Sim-X.X.X-all.jar"
+</code></pre>
+<p>Replacing the X.X.X by the version respectively, e.g 3.1.0</p>
+<h2 id="interested-in-papervision-click-here-to-go-back-to-the-documentation-page"><a class="header" href="#interested-in-papervision-click-here-to-go-back-to-the-documentation-page">Interested in PaperVision? <a href="https://app.gitbook.com/s/Fmz3GSY1piwyk8EqDogS/installing-papervision">Click here to go back to the documentation page.</a></a></h2>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="opencv-and-easyopencv"><a class="header" href="#opencv-and-easyopencv">OpenCV and EasyOpenCV</a></h1>
+<h2 id="what-is-opencv"><a class="header" href="#what-is-opencv">What is OpenCV?</a></h2>
+<p>OpenCV is known as a library containing multiple programming functions that are aimed at real-time computer vision.</p>
+<p>The library has more than 2500 optimized algorithms, which includes a comprehensive set of both classic and state-of-the-art computer vision and machine learning algorithms.</p>
+<p>These algorithms can be used to detect and recognize faces, identify objects, classify human actions in videos, track camera movements, track moving objects, extract 3D models of objects, produce 3D point clouds from stereo cameras, stitch images together to produce a high resolution image of an entire scene, find similar images from an image database, remove red eyes from images taken using flash, follow eye movements, recognize scenery and establish markers to overlay it with augmented reality, and more.</p>
+<p><img src=".gitbook/assets/imagen_2021-09-08_083505.png" alt="OpenCV used for detecting the 2019-2020 season’s stones and skystones"></p>
+<h2 id="so-how-do-i-integrate-it-to-ftc"><a class="header" href="#so-how-do-i-integrate-it-to-ftc">So… How do I integrate it to FTC?</a></h2>
+<p>The folks from OpenFTC developed a library to accomplish this in a very simple way, hiding the underlying complexities into a nice API.</p>
+<p><a href="https://github.com/OpenFTC/EasyOpenCV">EasyOpenCV </a>is a library that integrates OpenCV into the FTC SDK in a straightforward manner, providing the complete OpenCV Java library, plus multiple interfaces that give ease of access to internal phone cameras, or external webcams, and to be able to easily feed images from the real world to your OpenCV algorithm.</p>
+<p><a href="https://github.com/OpenFTC/EasyOpenCV/blob/master/examples/src/main/java/org/openftc/easyopencv/examples/InternalCamera2Example.java">Here we have an example</a> of the EasyOpenCV API, for using the internal camera of a phone to take images and send them into an OpenCvPipeline algorithm, and it can <a href="https://github.com/OpenFTC/EasyOpenCV/blob/master/examples/src/main/java/org/openftc/easyopencv/examples/WebcamExample.java">easily be applied to a webcam too</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="easyopencv-pipelines"><a class="header" href="#easyopencv-pipelines">EasyOpenCV Pipelines</a></h1>
+<h2 id="what-is-a-pipeline"><a class="header" href="#what-is-a-pipeline">What is a pipeline?</a></h2>
+<p>A pipeline is essentially an encapsulation of OpenCV image processing to do a certain thing. Most of the time, image processing requires operations to be done in series instead of in parallel; outputs from step A are fed into the inputs of step B, and outputs of step B are fed into step C, and so on. Hence, the term “Pipeline”. <code>(definition extracted from the</code><a href="https://github.com/OpenFTC/EasyOpenCV/blob/master/doc/user_docs/pipelines_overview.md"><code>EasyOpenCV docs</code></a><code>)</code></p>
+<p>EasyOpenCV implements this idea by using an abstract <code>OpenCvPipeline</code> class, from which you will extend when making your own pipeline. For example, here we have a pipeline that doesn’t do any processing with the input image:</p>
+<pre><code class="language-java">import org.opencv.core.Mat;
+import org.openftc.easyopencv.OpenCvPipeline;
+
+public class EmptyPipeline extends OpenCvPipeline {
+
+    @Override
+    public Mat processFrame(Mat input) {
+        return input;
+    }
+
+}
+</code></pre>
+<p>The <code>processFrame</code> function that comes from the extended OpenCvPipeline class always needs to be overridden, and it is where all your vision processing magic will happen. This function will be called when a new frame is dispatched from the camera (or from a static image or a video file, in the case of EOCV-Sim).</p>
+<p>An OpenCV <code>Mat</code> is simply a <strong>mat</strong>rix that contains any type of data, which for our purposes will be an image most of the time, and they are the base for OpenCV image processing. </p>
+<p>The Mat returned from processFrame function will be displayed on the live viewport. Since we are directly returning the input mat in the code before, the image coming from the camera will be displayed exactly as it is.</p>
+<p>The most simple processing that can be done in OpenCV is changing an image’s color space to another one. The following pipeline simply takes the input mat and changes its color space to grayscale:</p>
+<pre><code class="language-java">public class GrayPipeline extends OpenCvPipeline {
+
+    @Override
+    public Mat processFrame(Mat input) {
+        Imgproc.cvtColor(input, input, Imgproc.COLOR_RGBA2GRAY);
+        return input;
+    }
+}
+</code></pre>
+<p><img src=".gitbook/assets/gray.png" alt="The result of the GrayPipeline demonstrated before"></p>
+<p>One thing to note here is the conversion code used, <code>Imgproc.COLOR_RGBA2GRAY</code>, which means in a more literal way “convert the input mat,which is in the RGBA color space, to the grayscale space”.</p>
+<p>EasyOpenCV <strong>ALWAYS</strong> inputs RGBA frames to the pipeline (which stands for red, green, blue, alpha channels). This means that whenever you want to convert the input mat to another color space, you always need to specify to convert the mat from the RGBA color space to the desired one. </p>
+<p>For example, <code>Imgproc.COLOR_RGBA2RGB</code> (remove the alpha channel), <code>Imgproc.COLOR_RGB2HSV</code>, <code>Imgproc.COLOR_RGB2YCrCb</code>, etc.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="creating-and-running-a-pipeline"><a class="header" href="#creating-and-running-a-pipeline">Creating and Running a Pipeline</a></h1>
+<h2 id="lifecycle"><a class="header" href="#lifecycle">Lifecycle</a></h2>
+<p>One of the executable units of EOCV-Sim are <code>OpenCvPipeline</code>s, which can be created <a href="introduction/pipelines">as explained here</a>. The lifecycle is automatically managed by the sim, calling:</p>
+<ul>
+<li><code>init</code> before the first <code>processFrame</code></li>
+<li><code>processFrame</code> every time a new frame is dispatched from an <a href="#input-sources">Input Source</a></li>
+<li><code>onViewportTapped</code> when the image displayed on the UI is clicked with the mouse (or tapped if running the pipeline on a phone)</li>
+</ul>
+<pre><code class="language-java">import org.opencv.core.Mat;
+import org.openftc.easyopencv.OpenCvPipeline;
+
+public class SamplePipeline extends OpenCvPipeline {
+
+    @Override
+    public void init(Mat input) {
+        // Executed before the first call to processFrame
+    }
+
+    @Override
+    public Mat processFrame(Mat input) {
+        // Executed every time a new frame is dispatched
+
+        return input; // Return the image that will be displayed in the viewport
+                      // (In this case the input mat directly)
+    }
+
+    @Override
+    public void onViewportTapped() {
+        // Executed when the image display is clicked by the mouse or tapped
+        // This method is executed from the UI thread, so be careful to not
+        // perform any sort heavy processing here! Your app might hang otherwise
+    }
+
+}
+</code></pre>
+<p>You can learn more about pipelines in <a href="introduction/pipelines">their respective section</a>.</p>
+<h2 id="adding-pipelines-to-eocv-sim"><a class="header" href="#adding-pipelines-to-eocv-sim">Adding pipelines to EOCV-Sim</a></h2>
+<p>There are two ways for adding your own pipelines:</p>
+<ul>
+<li><a href="#what-are-workspaces">Workspaces</a>, which are the fastest and most flexible method of using the sim, since the pipelines are built on-the-fly and changes are applied immediately.</li>
+<li><a href="#building-from-source">Building from source</a>, which allows the use of other JVM languages such as Kotlin, but it is slower since you have to rebuild and wait for the sim to open every time you make changes in your pipelines.</li>
+</ul>
+<p>Workspaces are the recommended method for development if you use Java. You can use any IDE or text editor for them. We officially support <a href="#android-studio">Android Studio</a> (partially), <a href="#vs-code-and-intellij-idea">VS Code, and IntelliJ IDEA</a>.</p>
+<h2 id="executing-a-pipeline"><a class="header" href="#executing-a-pipeline">Executing a pipeline</a></h2>
+<p>Once you have added a pipeline using any of the methods mentioned before, executing any given pipeline is very simple. Your pipeline should appear in the “Pipelines” list, the first one located on the right section:</p>
+<p><img src=".gitbook/assets/image (1) (2).png" alt="In this case we will use the SamplePipeline shown before"></p>
+<p>You can simply select the pipeline by clicking it with your mouse, and<a href="#lifecycle"> the life cycle explained before</a> will start in your code. </p>
+<p>Notice the gears icon the SamplePipeline has, this means that the pipeline was added using the <a href="#what-are-workspaces">workspaces </a>method. </p>
+<p>As opposed to the DefaultPipeline which has a hammer and a wrench icon, which means that it was added using the <a href="#building-from-source">Build from Source</a> method.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="introduction-to-visionportal"><a class="header" href="#introduction-to-visionportal">Introduction to VisionPortal</a></h1>
+<p>New for the 2023-2024 season is the <strong>VisionPortal</strong> interface. A new technology that implements <strong>OpenCV</strong> vision right into the <strong>FTC SDK</strong>, making computer vision more accessible and easier to code for <em>FIRST Tech Challenge</em> than ever before. Creating a camera stream with VisionPortal is as easy as writting just a few, concise lines of code;</p>
+<pre><code class="language-java">VisionPortal myVisionPortal;
+
+// Create a VisionPortal, with the specified camera, and assign it to a variable.
+myVisionPortal = VisionPortal.easyCreateWithDefaults(hardwareMap.get(WebcamName.class, "Webcam 1"), ...);
+</code></pre>
+<p>Going into more technical details, VisionPortal is a thin API built on top of <strong>EasyOpenCV</strong>. So, not only is it easier to use, but it also takes advantage of the proven reliability of EasyOpenCV, used by hundreds (or even thousands!) of teams ever since 2019.</p>
+<p>We won’t go further in depth on the functionality of VisionPortal for the purposes of this documentation, but it’s highly advised check out <a href="https://ftc-docs.firstinspires.org/en/latest/apriltag/vision_portal/visionportal_overview/visionportal-overview.html">ftc-docs</a> for more information about the usage of this API.</p>
+<h3 id="visionprocessor"><a class="header" href="#visionprocessor">VisionProcessor</a></h3>
+<p>The <strong>VisionProcessor</strong> interface was introduced along VisionPortal to mimic the usage of OpenCvPipeline to this new API. If we take a look into the interface, we can notice it is pretty similar in concept:</p>
+<pre><code class="language-java">import android.graphics.Canvas;
+
+import org.firstinspires.ftc.robotcore.internal.camera.calibration.CameraCalibration;
+import org.firstinspires.ftc.vision.VisionProcessor;
+
+import org.opencv.core.Mat;
+
+public class SampleProcessor implements VisionProcessor {
+
+    @Override
+    public void init(int width, int height, CameraCalibration calibration) {
+        // Code executed on the first frame dispatched into this VisionProcessor
+    }
+    
+    @Override
+    public Object processFrame(Mat frame, long captureTimeNanos) {
+        // Actual computer vision magic will happen here
+    }
+    
+    @Override
+    public void onDrawFrame(Canvas canvas, int onscreenWidth, int onscreenHeight, float scaleBmpPxToCanvasPx, float scaleCanvasDensity, Object userContext) {
+        // Cool feature: This method is used for drawing annotations onto
+        // the displayed image, e.g outlining and indicating which objects
+        // are being detected on the screen, using a GPU and high quality 
+        // graphics Canvas which allow for crisp quality shapes.
+    }
+    
+}
+</code></pre>
+<p>We can attach this processor into a VisionPortal to start dispatching camera frames into our custom computer vision algorithms;</p>
+<pre><code class="language-java">VisionPortal myVisionPortal;
+SampleProcessor sampleProcessor = new SampleProcessor();
+
+// Create a VisionPortal, with the specified camera and the 
+// SampleProcessor we created earlier, and assign it to a variable.
+myVisionPortal = VisionPortal.easyCreateWithDefaults(hardwareMap.get(WebcamName.class, "Webcam 1"), sampleProcessor);
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="creating-and-running-a-visionprocessor"><a class="header" href="#creating-and-running-a-visionprocessor">Creating and Running a VisionProcessor</a></h1>
+<p>We’ll start off with a familiar example; the most simple processing that can be done in OpenCV is changing an image’s color space to another one. The following VisionProcessor simply takes the input frame and changes its color space to grayscale:</p>
+<pre class="language-java"><code class="lang-java">import android.graphics.Canvas;
+
+import org.firstinspires.ftc.robotcore.internal.camera.calibration.CameraCalibration;
+import org.firstinspires.ftc.vision.VisionProcessor;
+
+import org.opencv.core.Mat;
+<strong>import org.opencv.imgproc.Imgproc;
+</strong><strong>
+</strong><strong>public class GrayProcessor implements VisionProcessor {
+</strong>
+    @Override
+    public void init(int width, int height, CameraCalibration calibration) {
+        // Not useful in this case, but we do need to implement it either way
+    }
+    
+    @Override
+    public Object processFrame(Mat frame, long captureTimeNanos) {
+        Imgproc.cvtColor(frame, frame, Imgproc.COLOR_RGB2GRAY);
+        return null; // No context object
+    }
+    
+    @Override
+    public void onDrawFrame(Canvas canvas, int onscreenWidth, int onscreenHeight, float scaleBmpPxToCanvasPx, float scaleCanvasDensity, Object userContext) {
+        // Not useful either
+    }
+    
+}
+</code></pre>
+
+<p>The key difference from OpenCvPipeline is in the way we display the gray image - instead of returning a Mat, any change made to the <code>frame</code> object will be displayed on the screen accordingly. Although it is advisable to use <code>onDrawFrame</code> instead, this will serve well for our example purposes.</p>
+<p>Note that we return <em>null</em> from <code>processFrame</code>, which means that the <code>userContext</code> in <code>onDrawFrame</code>will have that corresponding value. Anything returned from <code>processFrame</code>will be respectively passed into <code>onDrawFrame</code> as <code>userContext</code>.</p>
+<h2 id="adding-processors-to-eocv-sim"><a class="header" href="#adding-processors-to-eocv-sim">Adding processors to EOCV-Sim</a></h2>
+<p>There are two ways for adding your own processors:</p>
+<ul>
+<li><a href="#what-are-workspaces">Workspaces</a>, which are the fastest and most flexible method of using the sim, since the code is built on-the-fly and changes are applied immediately.</li>
+<li><a href="#building-from-source">Building from source</a>, which allows the use of other JVM languages such as Kotlin, but it is slower since you have to recompile and wait for the sim to open every time you make changes in your code.</li>
+</ul>
+<p>Workspaces are the recommended method for development if you use Java. You can use any IDE or text editor for them.</p>
+<h2 id="executing-a-processor"><a class="header" href="#executing-a-processor">Executing a processor</a></h2>
+<p>Once you have added a processor using any of the methods mentioned before, executing it is very simple. Your processor should appear in the “Pipelines” list once it’s part of a workspace or added to EOCV-Sim’s source code:</p>
+<figure><img src=".gitbook/assets/image (5) (1).png" alt=""><figcaption>
+<p>We will select the GrayProcessor we made earlier</p>
+</figcaption></figure>
+<p>You can simply select the processor in this list, and it will begin execution right away.</p>
+<figure><img src=".gitbook/assets/image (3) (1).png" alt=""><figcaption>
+<p>GrayProcessor running live in EOCV-Sim</p>
+</figcaption></figure>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="opmodes-in-eocv-sim"><a class="header" href="#opmodes-in-eocv-sim">OpModes in EOCV-Sim</a></h1>
+<p>To enable usage of the VisionPortal API within EOCV-Sim, newer versions of the simulator enable the usage of so-called “<code>OpMode</code>s”; <a href="https://ftc-docs.firstinspires.org/en/latest/programming_resources/tutorial_specific/android_studio/creating_op_modes/Creating-and-Running-an-Op-Mode-(Android-Studio).html#examining-the-structure-of-your-op-mode">FIRST Tech Challenge teams should be already familiar with this concept</a>, where they work as “executable units” that allow users to write and run their custom robot code in a logical and simple manner, splitting robot operation into different “programs” that can be selected and switched to perfom different tasks depending on what is needed through the different stages of a robot match.</p>
+<p>Due to the way VisionPortal works specifically, it is ideal to call this API within said <code>OpMode</code>s, where setup code tells the API which cameras to use, the resolution of the camera stream, whether we want a live preview or not, running multiple VisionProcessors at once, or even perform development and testing of AprilTag localization math within these executable units.</p>
+<h3 id="lifecycle-1"><a class="header" href="#lifecycle-1">Lifecycle</a></h3>
+<p><code>OpMode</code>s have a very specific and simple flow of execution:</p>
+<ul>
+<li>The <code>init()</code> method which is executed when you press init after selecting the OpMode</li>
+<li>The <code>loop()</code> method which is executed repeatedly after <code>init()</code> has passed you press start</li>
+<li>The OpMode should be able to stop anytime when requested, pressing the stop button that is available right after starting.</li>
+</ul>
+<figure><img src=".gitbook/assets/image (11).png" alt=""><figcaption>
+<p>The OpMode selection and control panel as depicted in EOCV-Sim</p>
+</figcaption></figure>
+<h3 id="opmode-structure"><a class="header" href="#opmode-structure">OpMode Structure</a></h3>
+<p>Just like <code>OpenCvPipeline</code>, <code>OpMode</code> is a class that you can extend and inherit basic methods from:</p>
+<pre><code class="language-java">import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+
+/*
+ * This contains an example of an iterative (Non-Linear) "OpMode".
+ * An OpMode is a 'program' that runs in either the autonomous or the teleop period of an FTC match.
+ * The names of OpModes appear on the menu of the FTC Driver Station.
+ * When a selection is made from the menu, the corresponding OpMode
+ * class is instantiated on the Robot Controller and executed.
+ */
+@TeleOp(name="Example OpMode")
+public class ExampleOpMode extends OpMode {
+
+    /*
+     * Code to run ONCE when the driver hits INIT
+     */
+    @Override
+    public void init() {
+        telemetry.addData("Status", "Initialized");
+    }
+
+    /*
+     * Code to run REPEATEDLY after the driver hits INIT, but before they hit PLAY
+     */
+    @Override
+    public void init_loop() {
+    }
+
+    /*
+     * Code to run ONCE when the driver hits PLAY
+     */
+    @Override
+    public void start() {
+    }
+
+    /*
+     * Code to run REPEATEDLY after the driver hits PLAY but before they hit STOP
+     */
+    @Override
+    public void loop() {
+    }
+
+    /*
+     * Code to run ONCE after the driver hits STOP
+     */
+    @Override
+    public void stop() {
+    }
+}
+</code></pre>
+<h4 id="autonomous-vs-teleop"><a class="header" href="#autonomous-vs-teleop"><code>@Autonomous</code> vs <code>@TeleOp</code></a></h4>
+<p>You might have noticed this particular declaration in the example code earlier, which are known as “annotations” within Java. In this specific case, this annotation helps the program find your custom-created <code>OpMode</code>s. The key difference between @Autonomous and @TeleOp simply consists of where your program will be classified within the user interface of the station controls;</p>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<p>Both annotations take a <code>name</code>parameter which aid in displaying a more user-friendly name for your <code>OpMode</code>s when selecting them;</p>
+<pre class="language-java"><code class="lang-java"><strong>@TeleOp(name = "Concept: AprilTag")
+</strong></code></pre>
+
+<figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<h3 id="linearopmode"><a class="header" href="#linearopmode">LinearOpMode</a></h3>
+<p>LinearOpMode has a different structure than OpMode, but it is basically the same idea;</p>
+<pre><code class="language-java">@Autonomous(name="Example OpMode")
+public class ExampleLinearOpMode extends LinearOpMode {
+
+    @Override
+    public void runOpMode() {
+        telemetry.addData("Status", "Initialized");
+        telemetry.update();
+        
+        // Wait for the game to start (driver presses PLAY)
+        waitForStart();
+
+        // run until the end of the match (driver presses STOP)
+        while (opModeIsActive()) {
+            telemetry.addData("Status", "Running");
+            telemetry.update();
+        }
+    }
+}
+</code></pre>
+<p>There is an overridden method called <code>runOpMode</code>. Every op mode of type<code>LinearOpMode</code> must implement this method, as it gets called when a user selects and initializes your OpMode within the UI. Note that all linear op modes should have a <code>waitForStart()</code> statement to ensure that the robot will not begin executing the op mode until the driver pushes the start button.</p>
+<p>After a start command has been received, the op mode enters a while loop and keeps iterating in this loop until the op mode is no longer active (i.e., until the user pushes the stop button on the Driver Station).</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="using-visionportal-within-opmodes"><a class="header" href="#using-visionportal-within-opmodes">Using VisionPortal within OpModes</a></h1>
+<p>We’ll start with a pretty basic example that uses VisionPortal to run the the bundled AprilTagProcessor and explain line by line:</p>
+<pre class="language-java"><code class="lang-java">import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
+import org.firstinspires.ftc.vision.VisionPortal;
+import org.firstinspires.ftc.vision.apriltag.AprilTagDetection;
+import org.firstinspires.ftc.vision.apriltag.AprilTagProcessor;
+
+<strong>@Autonomous(name = "Example VisionPortal OpMode")
+</strong>public class ExampleVisionPortalOpMode extends LinearOpMode {
+
+    /**
+     * The variable to store our instance of the AprilTag processor.
+     */
+    private AprilTagProcessor aprilTag;
+
+    /**
+     * The variable to store our instance of the vision portal.
+     */
+    private VisionPortal visionPortal;
+
+    @Override
+    public void runOpMode() {
+        visionPortal = VisionPortal.easyCreateWithDefaults(
+                    hardwareMap.get(WebcamName.class, "Webcam 1"), aprilTag);
+
+        telemetry.addData("&gt;", "Touch Play to start OpMode");
+        telemetry.update();
+
+        // Wait for the DS start button to be touched.``
+        waitForStart();
+
+        if (opModeIsActive()) {
+            // ...
+        }
+
+        // Save more CPU resources when camera is no longer needed.
+        visionPortal.close();
+    }
+}
+
+</code></pre>
+
+<hr>
+<pre><code class="language-java">@Autonomous(name = "Example VisionPortal OpMode")
+public class ExampleVisionPortalOpMode extends LinearOpMode {
+</code></pre>
+<p>Declares our LinearOpMode and annotates it as an autonomous program. LinearOpMode is often more useful when coding autonomous routines due to its inherent structure.</p>
+<hr>
+<pre><code class="language-java">    /**
+     * The variable to store our instance of the AprilTag processor.
+     */
+    private AprilTagProcessor aprilTag;
+
+    /**
+     * The variable to store our instance of the vision portal.
+     */
+    private VisionPortal visionPortal;
+</code></pre>
+<p>Some convenience variables that will let us store our VisionProcessor and VisionPortal instances that we will be using later on.</p>
+<hr>
+<pre><code class="language-java">    @Override
+    public void runOpMode() {
+</code></pre>
+<p>Inherits the method from LinearOpMode that will be executed when the OpMode is initialized. Any code put in here will be executed as a result.</p>
+<hr>
+<pre><code class="language-java">        // Create the AprilTag processor the easy way.
+        aprilTag = AprilTagProcessor.easyCreateWithDefaults();
+        
+        // Create the vision portal the easy way.
+        visionPortal = VisionPortal.easyCreateWithDefaults(
+                hardwareMap.get(WebcamName.class, "Webcam 1"), aprilTag);
+</code></pre>
+<p>This is the key part of our image processing initialization; we’ll create our AprilTagProcessor and VisionPortal instances by using <code>easyCreateWithDefaults()</code>methods, which allows us to effortlessly initialize things by only passing a few parameters. </p>
+<p>We’ll make a special emphasis on this part;</p>
+<pre><code class="language-java">hardwareMap.get(WebcamName.class, "Webcam 1")
+</code></pre>
+<p>This line basically defines what will be the source of our images that are passed onto the attached <code>VisionProcessor</code>s, usually a webcam for that matter. “Webcam 1” indicates the <em>robot configuration name</em> of the image capture device we wish to use, as it is commonly the default name automatically assigned by the FTC SDK.</p>
+<p>In the case of EOCV-Sim, fortunately we have quite some other options here in order to provide more flexibility when it comes to testing your vision code;</p>
+<h2 id="using-other-input-sources-in-your-opmodes"><a class="header" href="#using-other-input-sources-in-your-opmodes">Using other input sources in your OpModes</a></h2>
+<table>
+<thead>
+<tr><th>Type</th><th>WebcamName</th><th data-hidden="">WebcamName</th><th data-hidden=""></th></tr>
+</thead>
+<tbody>
+<tr><td>USB Camera</td><td>
+<ul>
+<li>"Webcam 1" refers to the first USB camera detected by your operating system</li>
+<li>In order to use other cameras, you will need to enter their index number. "0" is the same as "Webcam 1", but you can specify any number that ranges from 0 to (n-1), where n is the number of USB cameras currently plugged.</li>
+</ul>
+</td><td>
+<ul>
+<li>"Webcam 1" automatically refers to the first USB camera detected by your operating system.</li>
+<li>Using other webcams is as simple as specifying their number; "0" is the same as "Webcam 1"</li>
+</ul>
+</td><td></td></tr>
+<tr><td>Image</td><td>
+<ul>
+<li>Images are specified by providing their absolute path as a WebcamName, the simulator automatically determines if it's an image by the file's extension.</li>
+<li>Examples: "C:\Users\pepito\Pictures\OnePixel.png"</li>
+<li>"/Users/PepitoRico/Downloads/OnePixel.png"</li>
+</ul>
+</td><td></td><td></td></tr>
+<tr><td>Video</td><td>
+<ul>
+<li>Videos are pretty much the same as images, as they are specified by providing their absolute path as a WebcamName, the simulator automatically determines if it's an video by the file's extension. Note that mp4 is most likely not supported due to licensing issues.</li>
+<li>Examples: "C:\Users\pepito\Pictures\10PixelsVideo.avi"</li>
+</ul>
+<ul>
+<li>"/Users/PepitoRico/Downloads/10PixelsVideo.mkv"</li>
+</ul>
+</td><td></td><td></td></tr>
+</tbody>
+</table>
+
+<h2 id="webcamname-code-examples"><a class="header" href="#webcamname-code-examples">WebcamName code examples</a></h2>
+<h3 id="usb-cameras"><a class="header" href="#usb-cameras">USB Cameras</a></h3>
+<pre><code class="language-java">hardwareMap.get(WebcamName.class, "Webcam 1");
+
+hardwareMap.get(WebcamName.class, "0"); // Same as "Webcam 1"
+hardwareMap.get(WebcamName.class, "1"); // Other webcam
+hardwareMap.get(WebcamName.class, "2"); // Other webcam
+</code></pre>
+<h3 id="images"><a class="header" href="#images">Images</a></h3>
+<pre><code class="language-java">hardwareMap.get(WebcamName.class, "C:\Users\pepito\Pictures\OnePixel.png");
+</code></pre>
+<h3 id="videos"><a class="header" href="#videos">Videos</a></h3>
+<pre><code class="language-java">hardwareMap.get(WebcamName.class, "/Users/PepitoRico/Downloads/10PixelsVideo.avi");
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="drawing-annotations-using-android-canvas-1"><a href="#drawing-annotations-using-android-canvas-1" class="header">Drawing annotations using Android Canvas</a></h1>
+<hr>
+<h2 id="description-learn-how-to-use-visionprocessors-ondrawframe"><a class="header" href="#description-learn-how-to-use-visionprocessors-ondrawframe">description: Learn how to use VisionProcessor’s onDrawFrame</a></h2>
+<h1 id="drawing-annotations-using-android-canvas"><a class="header" href="#drawing-annotations-using-android-canvas">Drawing annotations using Android Canvas</a></h1>
+<h3 id="ondrawframe-basics"><a class="header" href="#ondrawframe-basics">onDrawFrame() basics</a></h3>
+<p>Java classes implementing the VisionProcessor interface inherit 3 very useful methods; we have extensively covered the uses of <code>init</code>and <code>processFrame</code> earlier in this documentation. </p>
+<p>However there’s still one more method we haven’t explained, yet it holds great usefulness as well:</p>
+<pre><code class="language-java">@Override
+public void onDrawFrame(Canvas canvas, int onscreenWidth, int onscreenHeight, float scaleBmpPxToCanvasPx, float scaleCanvasDensity, Object userContext)
+</code></pre>
+<p><code>onDrawFrame()</code> comes in handy for better visualization of your vision processing algorithm, although with a steep learning curve, since it introduces a new way to draw shapes and colors on top of our image processing results, which is often really useful to indicate the results of our pipelines, such as highlighting which elements are currently being detected, draw a multicolored 3d cube on top of signaled AprilTags, annotate text to describe detected objects, etcetera.</p>
+<p>Since this drawing step is executed in another <em>Thread</em> (which means that it runs in parallel, at different pace than the rest of your vision processing), and is oftenly GPU accelerated to produce high quality rendering, it is needed to introduce this functionality as part of a separate method (step).</p>
+<h3 id="android-canvas-object"><a class="header" href="#android-canvas-object">Android Canvas object</a></h3>
+<p>In Android, the Canvas object acts as a virtual drawing surface. You can use it to create a graphical context for drawing shapes, images, color, and text on the screen. The <code>Canvas</code> is, well, your <em>canvas</em>, and you can paint on it to visually enrich your VisionProcessor. EOCV-Sim is prepared to handle most Android Canvas use-cases and appropiately mocks this interface to use it in your desktop OS just as you would in an Android device within the FTC SDK.</p>
+<ol>
+<li><strong>Canvas Drawing Methods:</strong> The Canvas provides various drawing methods to create different types of graphical elements. Some common methods include <code>drawRect()</code>, <code>drawCircle()</code>, <code>drawLine()</code>, <code>drawText()</code>, and many more. These methods allow you to draw shapes and text on the Canvas.</li>
+<li><strong>Coordinate System:</strong> The Canvas uses a 2D Cartesian coordinate system, with the origin (0,0) at the top-left corner of the Canvas. Positive X values extend to the right, and positive Y values extend downward.</li>
+<li><strong>Color and Style:</strong> You can set various attributes for your drawings using the Paint object. This includes attributes like stroke color, fill color, stroke width, and text size. You configure the Paint object and then use it in conjunction with Canvas drawing methods.</li>
+</ol>
+<pre class="language-java"><code class="lang-java">// Create a Paint object to set drawing attributes
+Paint paint = new Paint();
+paint.setColor(Color.RED); // Set the color to red
+
+<strong>// Draw a red rectangle on the Canvas
+</strong>canvas.drawRect(50, 50, 200, 200, paint);
+</code></pre>
+
+<h3 id="understanding-the-paint-object"><a class="header" href="#understanding-the-paint-object">Understanding the Paint object</a></h3>
+<p>The Android Paint object is used to define how graphical elements are drawn on the Canvas. It allows you to set multiple attributes such as color, style, stroke width, text size, and more. Understanding how to configure the Paint object is key for creating the desired visual effects when working with the Canvas. You can think of the <code>Paint</code> object as the combination of your <em>bucket</em> containing paint of a defined color, and its <em>brush with a</em> specific <em>size</em> and <em>style</em>, which you will later use to draw shapes using the methods of a <em>Canvas.</em></p>
+<ol>
+<li><strong>Color:</strong> The Paint object can set the color of lines, shapes, and text. You can use the <code>setColor()</code> method to specify the desired color. For example, <code>paint.setColor(Color.RED)</code> sets the paint color to red.</li>
+<li><strong>Style:</strong> Paint can determine the style for drawing shapes and lines, such as <code>FILL</code> for filled shapes, <code>STROKE</code> for outlines, and <code>FILL_AND_STROKE</code> for both. Use <code>setStyle()</code> to configure the style.</li>
+<li><strong>Stroke Width:</strong> You can specify the width of the stroke when drawing lines and shapes using the <code>setStrokeWidth()</code> method.</li>
+<li><strong>Text Size:</strong> When drawing text, you can control the text size with <code>setTextSize()</code>. This is especially useful when annotating images or creating custom text labels.</li>
+<li><strong>Typeface:</strong> The Paint object also allows you to set the typeface for text using <code>setTypeface()</code>, which can be used to customize the font style.</li>
+</ol>
+<pre><code class="language-java">Paint paint = new Paint();
+paint.setColor(Color.BLUE); // Set the color to blue
+paint.setStyle(Paint.Style.FILL); // Fill the shape
+</code></pre>
+<p>Most of the methods from <code>Canvas</code> take a <code>Paint</code> object as an argument, which gives an easy way to draw multiple shapes and lines with the same color and parameters.</p>
+<pre><code class="language-java">// Draw a blue filled circle on the Canvas
+canvas.drawCircle(150, 150, 100, paint);
+</code></pre>
+<h3 id="handling-context-objects-in-a-visionprocessor"><a class="header" href="#handling-context-objects-in-a-visionprocessor">Handling context objects in a VisionProcessor</a></h3>
+<p>In the context of a VisionProcessor, handling a <em>context object</em> is a fundamental practice that involves managing and passing additional information and state data between <code>processFrame</code> and <code>onDrawFrame</code>. This mechanism is essential for efficient coordination and communication between these two components. </p>
+<p>Let’s review a few key concepts to make sure we’re on track:</p>
+<ol>
+<li><strong>VisionProcessor Interface</strong>: Defines methods for initializing, processing frames, and rendering visual data.</li>
+<li><strong>Initialization</strong>: The <code>init</code> method sets up the processor with frame dimensions and calibration data.</li>
+<li><strong>Processing Step</strong>: In <code>processFrame</code>, analyze frames, perform object detection, and store results in the context object.</li>
+<li><strong>Context Object</strong>: Stores and passes information between <code>processFrame</code> and <code>onDrawFrame</code> methods.</li>
+<li><strong>Context Object as UserContext</strong>: The context object from <code>processFrame</code> is returned as <code>userContext</code> for <code>onDrawFrame</code>.</li>
+<li><strong>Rendering Step</strong>: <code>onDrawFrame</code> uses <code>userContext</code> to render visual annotations on the canvas.</li>
+<li><strong>Data Flow</strong>: Context objects enable efficient data flow from processing to rendering.</li>
+</ol>
+<pre><code class="language-java">public class SimpleVisionProcessor implements VisionProcessor {
+    @Override
+    public void init(int width, int height, CameraCalibration calibration) {
+        // Initialization code, if needed
+    }
+
+    @Override
+    public Object processFrame(Mat frame, long captureTimeNanos) {
+        // Process the frame, detect shapes, and store them in the context object
+        List&lt;Rect&gt; detectedRects = detectRects(frame);
+        
+        // Return the context object as userContext
+        return detectedShapes;
+    }
+
+    @Override
+    public void onDrawFrame(Canvas canvas, int onscreenWidth, int onscreenHeight, float scaleBmpPxToCanvasPx, float scaleCanvasDensity, Object userContext) {
+        // Render detected shapes using the userContext (which is the context object)
+        drawRects(canvas, (List&lt;Rect&gt;) userContext);
+    }
+
+    // TODO: Implement detectRects and drawRects...
+}
+</code></pre>
+<p>For the purposes of this example, we won’t write the implementation details of <code>detectRects</code>, but this should give a barebones demonstration of how the <code>userContext</code> works.</p>
+<p>Note how we pass a context object from processFrame, by returning it through this method;</p>
+<pre><code class="language-java">// Process the frame, detect shapes, and store them in the context object
+List&lt;Rect&gt; detectedRects = detectRects(frame);
+
+// Return the context object as userContext
+return detectedShapes;
+</code></pre>
+<p>Now let’s see how we handle this userContext in <code>onDrawFrame</code>, where we need to perform <a href="https://www.w3schools.com/java/java_type_casting.asp">type casting</a> to ensure we are actually getting the expected object that was created in <code>processFrame</code>:</p>
+<pre><code class="language-java">(List&lt;Rect&gt;) userContext
+</code></pre>
+<h3 id="opencv-to-android-canvas-position-transformations"><a class="header" href="#opencv-to-android-canvas-position-transformations">OpenCV to Android Canvas Position transformations</a></h3>
+<p>Due to the differences in size and aspect ratio between the Android <em>Canvas</em> and the image coming from <em>OpenCV</em>, we do need to perform a few simple transformations to display our shapes in the adequate positions. For example, we can implement a utility method that converts an OpenCV rectangle into <em>Canvas</em> positions:</p>
+<pre><code class="language-java">private android.graphics.Rect makeGraphicsRect(Rect rect, float scaleBmpPxToCanvasPx) {
+     int left = Math.round(rect.x * scaleBmpPxToCanvasPx);
+     int top = Math.round(rect.y * scaleBmpPxToCanvasPx);
+     int right = left + Math.round(rect.width * scaleBmpPxToCanvasPx);
+     int bottom = top + Math.round(rect.height * scaleBmpPxToCanvasPx);
+     
+     return new android.graphics.Rect(left, top, right, bottom);
+}
+</code></pre>
+<p>Note that the parameter <code>scaleBmpPxToCanvasPx</code> is a pretty useful scale factor that easily allows you to correctly place shapes on the Android Canvas, it is calculated under the hood and provided to your code through the onDrawFrame method; take the following code as an example of how to use this utility</p>
+<pre><code class="language-java">@Override
+public void onDrawFrame(Canvas canvas, int onscreenWidth, int onscreenHeight, float scaleBmpPxToCanvasPx, float scaleCanvasDensity, Object userContext) {
+    Rect rect = ...; // OpenCV rectangle
+    
+    Paint rectPaint = new Paint();
+    rectPaint.setColor(Color.RED);
+    rectPaint.setStyle(Paint.Style.STROKE);
+    rectPaint.setStrokeWidth(scaleCanvasDensity * 4);
+
+    canvas.drawRect(makeGraphicsRect(rect, scaleBmpPxToCanvasPx), rectPaint);
+}
+</code></pre>
+<p>You can find the <a href="https://gist.github.com/serivesmejia/7185b078f2a2a21f41455b2acb80adee">full example code here</a> and test it out on EOCV-Sim or even your own robot!</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="what-are-workspaces"><a class="header" href="#what-are-workspaces">What are workspaces?</a></h1>
+<h2 id="introduction-1"><a class="header" href="#introduction-1">Introduction</a></h2>
+<p>A workspace basically consists of a folder containing <code>.java</code> source files and resource files, which are compiled on-the-fly by EOCV-Sim. This removes the need of having to use Gradle for running slow builds, and even allows you to see code changes in real time within a few seconds, or even milliseconds!</p>
+<p><img src=".gitbook/assets/screenshot_2021-09-08_13-29-02.png" alt="A OpenCvPipeline opened in VS Code with IntelliSense"></p>
+<h2 id="using-workspaces-without-any-supported-ide-or-text-editor"><a class="header" href="#using-workspaces-without-any-supported-ide-or-text-editor">Using workspaces (without any supported IDE or text editor)</a></h2>
+<p>Workspaces in EOCV-Sim are very flexible, which means that you don’t need any specific IDE or text editor, you just need to provide <code>.java</code> files that the simulator will compile. There’s an <code>eocvsim_workspace.json</code> file which configures the build process, and will be explained next.</p>
+<p>The simulator creates and selects by default a workspace in the user folder, <code>~/.eocvsim/default_workspace</code>, which contains a sample GrayscalePipeline.java that is compiled and added on runtime, but you can change it by doing the following steps:</p>
+<ul>
+<li>Go under the “Pipelines” section, click the “Workspace” and finally “Select workspace”. Or alternatively, you can also go to Workspace -&gt; Select workspace</li>
+</ul>
+<p><img src=".gitbook/assets/eocvsim_usage_workspace_select.gif" alt=""></p>
+<ul>
+<li>Select a folder in the file explorer that pops up</li>
+</ul>
+<p><img src=".gitbook/assets/file-chooser-screenshot.png" alt=""></p>
+<ul>
+<li>And you are done! The sim should select the folder as a workspace, create a <code>eocvsim_workspace.json</code> file if it doesn’t exist in the selected folder, and build the <code>.java</code> files in the directory.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="vs-code-and-intellij-idea"><a class="header" href="#vs-code-and-intellij-idea">VS Code and IntelliJ IDEA</a></h1>
+<p>Both IntelliJ IDEA and VS Code are the IDE and Text Editor recommended to use for EOCV-Sim. While IntelliJ is a fully featured IDE specifically designed for Java, with consistent and great autocompletion, refactoring features, etc, VS Code is more lightweight and faster in computers with limited resources.</p>
+<p>This guide will explain how to use any of these two, you can choose whichever suits you the best.</p>
+<h2 id="vs-code"><a class="header" href="#vs-code">VS Code</a></h2>
+<p><strong>Make sure you installed a JDK as explained in the</strong> <a href="#downloading-eocv-sim"><strong>Dowloading EOCV-Sim</strong></a> <strong>section.</strong></p>
+<ol>
+<li>Download VS Code in <a href="https://code.visualstudio.com">here</a> if you haven’t already.</li>
+<li>Open VS Code and install the <a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack">Extension Pack for Java</a>, going to the extensions section, search for “java” in the search box at the top and find the extension that looks like the following screenshot.</li>
+</ol>
+<p><img src=".gitbook/assets/extension-tab.png" alt=""></p>
+<p><img src=".gitbook/assets/java-extension-pack.png" alt=""></p>
+<ol>
+<li>Click on the blue “Install” button and restart VS Code.</li>
+<li>Do the steps specified in the <a href="#creating-a-gradle-workspace"><strong>Creating a Gradle workspace</strong></a> section</li>
+<li>Once you have done the steps in that section, go back to VS Code. If it wasn’t opened automatically by EOCV-Sim, open it manually and select the folder you created in EOCV-Sim.</li>
+<li>If the language support plugin asks to import the project on the bottom right, click on yes.</li>
+</ol>
+<p><img src=".gitbook/assets/screenshot_vscode_javaproject.png" alt=""></p>
+<ol>
+<li>Wait for the import process to finish; see the tiny loading icon in the bottom right.</li>
+<li>Pop up the <code>src/main/java</code> folder. This is where you will put your pipelines.</li>
+<li>To create a new pipeline, right-click on the <code>java</code> folder and then choose “New File”. Give the file a name and a <code>.java</code> extension (append it at the end of the name, for example <code>GrayscalePipeline.java</code>)</li>
+<li>Copy and paste this template to have a base to create your pipeline. Replace the name of the class with the name you gave the file where it’s indicated</li>
+</ol>
+<pre><code class="language-java">import org.opencv.core.Mat;
+import org.opencv.imgproc.Imgproc;
+import org.openftc.easyopencv.OpenCvPipeline;
+
+public class &lt;Name Here&gt; extends OpenCvPipeline {
+
+    @Override
+    public Mat processFrame(Mat inputMat) {
+        // Your code here
+        return inputMat;
+    }
+
+}
+</code></pre>
+<p>If you have EOCV-Sim opened, every time you save the file in the editor (you can use Ctrl + S) a new build will be executed. If your pipeline was compiled successfully, it will be added to the list with a “gears” icon in the list to differentiate it.</p>
+<p>However, if the build failed, you will be presented with an output error message saying where the errors are located exactly. VS Code IntelliSense should help you with finding these issues.</p>
+<p>Refer to the <a href="introduction/pipelines">pipelines section</a> if you want to learn more about pipelines.</p>
+<h2 id="intellij-idea"><a class="header" href="#intellij-idea">IntelliJ IDEA</a></h2>
+<ol>
+<li>Do the steps specified in the<a href="#creating-a-gradle-workspace"> Creating a Gradle workspace</a> section</li>
+<li>Open IntelliJ IDEA and import the Gradle workspace you just created:</li>
+</ol>
+<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption>
+<p>Select the "Open" option and navigate to find your workspace folder</p>
+</figcaption></figure>
+<p>Alternatively, if you’re not at the starter screen of IntelliJ IDEA, you can also do the following:</p>
+<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption>
+<p>Import the Gradle workspace with the "Project from Existing Sources" menu option</p>
+</figcaption></figure>
+<ol start="3">
+<li>Navigate through the src/main/java folders, you’ll then find the packages in which you’ll be able to start adding your own pipelines</li>
+</ol>
+<figure><img src=".gitbook/assets/image (5).png" alt="" width="413"><figcaption>
+<p>Gradle workspace imported into IntelliJ</p>
+</figcaption></figure>
+<ol start="4">
+<li>Create a new Java class anywhere within the src/main/java folder. To create a pipeline, you can start with this template</li>
+</ol>
+<pre><code class="language-java">import org.opencv.core.Mat;
+import org.opencv.imgproc.Imgproc;
+import org.openftc.easyopencv.OpenCvPipeline;
+
+public class &lt;Name Here&gt; extends OpenCvPipeline {
+
+    @Override
+    public Mat processFrame(Mat inputMat) {
+        // Your code here
+        return inputMat;
+    }
+
+}
+</code></pre>
+<p>If you have EOCV-Sim opened, every time you make a change in IntellIj a new build will be executed. If your pipeline was compiled successfully, it will be added to the list with a “gears” icon in the list to differentiate it.</p>
+<h2 id="creating-a-gradle-workspace"><a class="header" href="#creating-a-gradle-workspace">Creating a Gradle workspace</a></h2>
+<ol>
+<li>Open EOCV-Sim (follow <a href="#running-eocv-sim">this page</a> if needed)</li>
+<li>In the top bar menu, go to <strong>Workspace -&gt; External -&gt; Create Gradle Workspace</strong></li>
+</ol>
+<p><img src=".gitbook/assets/create-gradle-workspace.png" alt=""></p>
+<ol>
+<li>In the file explorer, create a new empty folder or select one that already exists but has no files. You can’t use a folder that already has files in it. Click on the folder icon with a “+” in the top, and give the new folder a name.</li>
+</ol>
+<p><img src=".gitbook/assets/create-folder-screenshot.png" alt=""></p>
+<ol>
+<li>Select the newly created folder and click on “open”. </li>
+</ol>
+<p>It will pop up a dialog asking if you want to open VS Code.</p>
+<ul>
+<li>If you were following the VS Code guide, click on “Yes” once it asks if you want to open it, and go back to <a href="#vs-code">step #5</a>.</li>
+<li>If you were following the IntelliJ IDEA guide, click on “No” and go back to step #2.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="android-studio"><a class="header" href="#android-studio">Android Studio</a></h1>
+<p>If you want to use EOCV-Sim with <code>OpenCvPipeline</code>s that are already in Android Studio, that’s easily possible using the workspaces feature.</p>
+<p>To achieve this, you need to isolate your pipeline’s source files into their own package. Since EOCV-Sim only implements a very small part of the FTC SDK, if you try to compile a class that references stuff like <code>DcMotor</code>, it will fail since those classes don’t exist in EOCV-Sim.</p>
+<p>The only classes from the FTC SDK and EasyOpenCV that have been implemented are…</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Package</th><th>Classes</th></tr>
+</thead>
+<tbody>
+<tr><td>org.firstinspires.ftc.robotcore.external</td><td>
+<p>Telemetry (partially)</p>
+<p>Func</p>
+</td></tr>
+<tr><td>org.firstinspires.ftc.robotcore.external.function</td><td>Consumer</td></tr>
+<tr><td>org.firstinspires.ftc.vision</td><td>* (everything)</td></tr>
+<tr><td>com.qualcomm.robotcore.eventloop.opmode</td><td>
+<p>OpMode<br>LinearOpMode</p>
+</td></tr>
+<tr><td>com.qualcomm.robotcore.util</td><td>
+<p>ElapsedTime</p>
+<p>MovingStatistics</p>
+<p>Range</p>
+<p>Statistics</p>
+</td></tr>
+<tr><td>org.openftc.easyopencv</td><td>
+<p>OpenCvPipeline</p>
+<p>OpenCvTracker</p>
+<p>OpenCvTrackerApiPipeline</p>
+<p>TimestampedOpenCvPipeline</p>
+</td></tr>
+<tr><td>org.opencv</td><td>* (everything)</td></tr>
+</tbody>
+</table>
+</div>
+<p>This also means that, outside of <code>OpMode</code>s, you <strong>do not need to use the<code>OpenCvCamera</code>related stuff in EOCV-Sim</strong>, inputs are simulated using <a href="#input-sources">Input Sources</a>.</p>
+<p>For example, you can have the following package structure in your Android Studio project to isolate <code>OpenCvPipeline</code>s and load them into EOCV-Sim:</p>
+<p><img src=".gitbook/assets/eocv-sim-folder-structure.png" alt=""></p>
+<p>The <code>VisionTestOpMode</code>class can freely use any of the FTC SDK or EasyOpenCV classes, while the classes under the <code>vision</code>package should only use the ones specified in the table before, including the whole OpenCV library of course.</p>
+<p>Now, you will select the <code>vision</code> package as a workspace in EOCV-Sim. To select a workspace you can go to <code>Workspace -&gt; Select workspace</code>, like in the gif shown below (both options showcased do the same thing):</p>
+<p><img src=".gitbook/assets/eocvsim_usage_workspace_select.gif" alt=""></p>
+<p>To find the vision folder in the project, first locate the root folder of your FTC SDK project in the file selector, something that looks like this:</p>
+<p><img src=".gitbook/assets/root-sdk-folder.png" alt=""></p>
+<p>Then, navigate through the folders<code>TeamCode/src/main/java/org/firstinspires/ftc/teamcode</code> and you will find the following:</p>
+<p><img src=".gitbook/assets/select-vision-package.png" alt=""></p>
+<p>Select the <code>vision</code> folder and click on “Open”. The pipelines inside will be compiled in a few instants, and you will have them on the pipeline selector once it finishes successfully:</p>
+<p><img src=".gitbook/assets/selected-vision-package.png" alt="The pipelines that are in the vision package, in the first screenshot of this page"></p>
+<p>And now you are done! You will now be able to modify your pipelines from Android Studio and see the changes live. Refer to <a href="#input-sources">the features section</a> to learn more about the additional features of EOCV-Sim</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="input-sources"><a class="header" href="#input-sources">Input Sources</a></h1>
+<p>To provide more flexibility, EOCV-Sim allows feeding your pipeline with images coming from different sources. You can feed a single static image or a moving video stored on your computer’s disk, or stream frames from a webcam connected to your computer. These will be explained next.</p>
+<ul>
+<li>
+<p><strong>Image Source:</strong></p>
+<ul>
+<li>These will feed your pipeline with a static image loaded in your computer’s hard drive.</li>
+<li>To save resources, your pipeline will just run once when you select an image source, but you can optionally resume the pipeline execution by clicking the “Pause” button under the pipeline selector.</li>
+</ul>
+</li>
+<li>
+<p><strong>Camera Source:</strong></p>
+<ul>
+<li>These will feed your pipeline with a constantly changing video stream from a specified camera plugged in your computer.</li>
+<li>Unlike the image sources, these will not pause the execution of you pipeline by default, but you can click the “Pause” button to pause it at any time.</li>
+</ul>
+</li>
+<li>
+<p><strong>Video Source:</strong></p>
+<ul>
+<li>These will feed your pipeline with a constantly changing video stream from a file in your hard drive, pause rules are the same as camera sources.</li>
+<li>Recommended video format is <em>*.avi</em>, although it depends on your operating system’s support.</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="variable-tuner"><a class="header" href="#variable-tuner">Variable Tuner</a></h1>
+<h2 id="basics"><a class="header" href="#basics">Basics</a></h2>
+<p>From EOCV-Sim v2.0.0 and going forward, there’s a variable tuner implemented into the simulator, inspired by FTC Dashboard, it allows to edit public, non-final variables from your pipeline in real time seamlessly through Java reflection.</p>
+<figure><img src=".gitbook/assets/image (8) (1).png" alt=""><figcaption>
+<p>Variable tuner panel popup button (located at the bottom)</p>
+</figcaption></figure>
+<figure><img src=".gitbook/assets/image (10) (1).png" alt=""><figcaption>
+<p>DefaultPipeline blur variable</p>
+</figcaption></figure>
+<p>The “blur” variable simply consists of a public, non-final field declared in the DefaultPipeline, which is automatically detected and displayed by the simulator:</p>
+<figure><img src=".gitbook/assets/image (9) (1).png" alt=""><figcaption>
+<p>DefaultPipeline source code</p>
+</figcaption></figure>
+<h2 id="supported-types"><a class="header" href="#supported-types">Supported Types</a></h2>
+<p>The tuner supports a handful of Java types, such as most primitives (int, float, double, boolean…) and some other types from OpenCV. The full list of types currently supported by the tuner on the latest version is:</p>
+<p><strong>Java:</strong></p>
+<ul>
+<li>int (or Integer)</li>
+<li>float (or Float)</li>
+<li>double (or Double)</li>
+<li>long (or Long)</li>
+<li>boolean (or Boolean)</li>
+<li>String</li>
+<li>Enums</li>
+</ul>
+<p><strong>OpenCV:</strong></p>
+<ul>
+<li>Scalar</li>
+<li>Rect</li>
+<li>Point</li>
+</ul>
+<h2 id="sample-usage"><a class="header" href="#sample-usage">Sample Usage</a></h2>
+<p>Let’s say we need to tune a threshold for finding the ring stack in the 2020-2021 “Ultimate Goal” game. For this, we will use the YCrCb color space since it’s one of the most used ones in FTC, and it behaves better under different lightning conditions. (see <a href="https://learnopencv.com/color-spaces-in-opencv-cpp-python/">this article</a> for more extended explanation and comparing of different color spaces).</p>
+<p>We can write a simple pipeline for achieving this, taking advantage of the variable tuner. Here’s an example code with detailed comments:</p>
+<pre><code class="language-java">package org.firstinspires.ftc.teamcode;
+
+import org.opencv.core.Core;
+import org.opencv.core.Mat;
+import org.opencv.core.Scalar;
+import org.opencv.imgproc.Imgproc;
+import org.openftc.easyopencv.OpenCvPipeline;
+
+public class SimpleThresholdPipeline extends OpenCvPipeline {
+
+    /*
+     * These are our variables that will be
+     * modifiable from the variable tuner.
+     *
+     * Scalars in OpenCV are generally used to
+     * represent color. So our values in the
+     * lower and upper Scalars here represent
+     * the Y, Cr and Cb values respectively.
+     *
+     * YCbCr, like most color spaces, range
+     * from 0-255, so we default to those
+     * min and max values here for now, meaning
+     * that all pixels will be shown.
+     */
+    public Scalar lower = new Scalar(0, 0, 0);
+    public Scalar upper = new Scalar(255, 255, 255);
+
+    /*
+     * A good practice when typing EOCV pipelines is
+     * declaring the Mats you will use here at the top
+     * of your pipeline, to reuse the same buffers every
+     * time. This removes the need to call mat.release()
+     * with every Mat you create on the processFrame method,
+     * and therefore, reducing the possibility of getting a
+     * memory leak and causing the app to crash due to an
+     * "Out of Memory" error.
+     */
+    private Mat ycrcbMat       = new Mat();
+    private Mat binaryMat      = new Mat();
+    private Mat maskedInputMat = new Mat();
+
+    @Override
+    public Mat processFrame(Mat input) {
+        /*
+         * Converts our input mat from RGB to YCrCb.
+         * EOCV ALWAYS returns RGB mats, so you'd
+         * always convert from RGB to the color
+         * space you want to use.
+         *
+         * Takes our "input" mat as an input, and outputs
+         * to a separate Mat buffer "ycrcbMat"
+         */
+        Imgproc.cvtColor(input, ycrcbMat, Imgproc.COLOR_RGB2YCrCb);
+
+        /*
+         * This is where our thresholding actually happens.
+         * Takes our "ycrcbMat" as input and outputs a "binary"
+         * Mat to "binaryMat" of the same size as our input.
+         * "Discards" all the pixels outside the bounds specified
+         * by the scalars above (and modifiable with EOCV-Sim's
+         * live variable tuner.)
+         *
+         * Binary meaning that we have either a 0 or 255 value
+         * for every pixel.
+         *
+         * 0 represents our pixels that were outside the bounds
+         * 255 represents our pixels that are inside the bounds
+         */
+        Core.inRange(ycrcbMat, lower, upper, binaryMat);
+
+        /*
+         * Release the reusable Mat so that old data doesn't
+         * affect the next step in the current processing
+         */
+        maskedInputMat.release();
+
+        /*
+         * Now, with our binary Mat, we perform a "bitwise and"
+         * to our input image, meaning that we will perform a mask
+         * which will include the pixels from our input Mat which
+         * are "255" in our binary Mat (meaning that they're inside
+         * the range) and will discard any other pixel outside the
+         * range (RGB 0, 0, 0. All discarded pixels will be black)
+         */
+        Core.bitwise_and(input, input, maskedInputMat, binaryMat);
+
+        /*
+         * The Mat returned from this method is the
+         * one displayed on the viewport.
+         *
+         * To visualize our threshold, we'll return
+         * the "masked input mat" which shows the
+         * pixel from the input Mat that were inside
+         * the threshold range.
+         */
+        return maskedInputMat;
+    }
+
+}
+</code></pre>
+<p>And so, when initially selecting this pipeline in the simulator, its initial state should look something like this:</p>
+<p><img src=".gitbook/assets/eocvsim_usage_tuner_thresholdsample_1.png" alt="Scalar variables with sliders that range from 0 to 255"></p>
+<p>All pixels from the input Mat are entirely visible; this is because we specified a range of 0 lower and 255 upper (0-255) for all three channels (see the sliders values). Since those values are the minimum (0%) and maximum (100%) for YCrCb respectively, all pixels are able to go through our “threshold”. The last slider can be ignored since we don’t have a 4th color channel</p>
+<p>After a bit of playing around with the sliders, it’s possible to come up with some decent values which successfully filter out the orange ring stack out of everything else:</p>
+<p><img src=".gitbook/assets/eocvsim_usage_tuner_thresholdsample_2.png" alt="Woo! We are filtering the rings!"></p>
+<p>A problem with the YCrCb color space, especially this year, is that the difference between red and orange is very subtle. So we need to play with the values for a good while until we find some that filters out the red from the goals (in the image you can see there’s still red leftovers at the top right) but displays the ring stack. Or do some other technique alongside thresholding such as <a href="https://github.com/FTCLib/FTCLib/blob/3a43b191b18581a2f741588f9b8ab60c13b7fb6c/core/vision/src/main/java/com/arcrobotics/ftclib/vision/UGContourRingPipeline.kt#L46">FTCLib’s contour ring pipeline</a> with the “horizon” mechanism.</p>
+<p>To keep this explanation simple, you can find the final pipeline <a href="https://github.com/serivesmejia/EOCV-Sim/blob/dev/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SimpleThresholdPipeline.java">here</a> with some additional features, in the TeamCode module, since serves as a good sample alongside other sample classes from EOCV itself.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="telemetry"><a class="header" href="#telemetry">Telemetry</a></h1>
+<p>It’s sometimes useful to log data from your vision code to know the result in real time. To do this, we partially implement the basic Telemetry interface that is present in the FTC SDK (e.g methods like <code>Telemetry#talk</code>are not implemented) to follow the main idea of EOCV-Sim of “easily copy-pasting into an FTC SDK project”.</p>
+<h3 id="telemetry-in-visionprocessor"><a class="header" href="#telemetry-in-visionprocessor">Telemetry in VisionProcessor</a></h3>
+<p>To use telemetry in a proccessor, you need to have a constructor which takes a Telemetry parameter, and save it into an instance variable within your code. This is demostrated in the following snippet:</p>
+<pre><code class="language-java">import android.graphics.Canvas;
+
+import org.firstinspires.ftc.robotcore.internal.camera.calibration.CameraCalibration;
+import org.firstinspires.ftc.vision.VisionProcessor;
+
+import org.opencv.core.Mat;
+import org.opencv.imgproc.Imgproc;
+
+import org.firstinspires.ftc.robotcore.external.Telemetry;
+
+public class TelemetryProcessor implements VisionProcessor {
+
+    Telemetry telemetry;
+
+    public TelemetryProcessor(Telemetry telemetry) {
+        this.telemetry = telemetry;
+    }
+    
+    @Override
+    public void init(int width, int height, CameraCalibration calibration) {
+        // Not useful in this case, but we do need to implement it either way
+    }
+
+    @Override
+    public Object processFrame(Mat input) {
+        telemetry.addData("[Hello]", "World!");
+        telemetry.update();
+        
+        return null; // No need for a context object
+    }
+    
+    @Override
+    public void onDrawFrame(Canvas canvas, int onscreenWidth, int onscreenHeight, float scaleBmpPxToCanvasPx, float scaleCanvasDensity, Object userContext) {
+        // Not useful either
+    }
+
+}
+</code></pre>
+<p><img src=".gitbook/assets/eocvsim_usage_telemetry.png" alt="The telemetry output from the code above"></p>
+<p>The basic idea of telemetry is to send data using the <code>Telemetry#addData</code> or <code>Telemetry#addLine</code> methods. Once you finish adding data, you call <code>Telemetry#update</code> in the end, to display the data and clear the past state of the telemetry so the messages that were sent in a previous call to update will not be displayed.</p>
+<h3 id="telemetry-in-opencvpipeline"><a class="header" href="#telemetry-in-opencvpipeline">Telemetry in OpenCvPipeline</a></h3>
+<p>We’ll replicate the example from earlier as an OpenCvPipeline. The core concept remains the same, but the code structure changes a little from using a different interface;</p>
+<pre><code class="language-java">import org.opencv.core.Mat;
+import org.openftc.easyopencv.OpenCvPipeline;
+
+import org.firstinspires.ftc.robotcore.external.Telemetry;
+
+public class TelemetryPipeline extends OpenCvPipeline {
+
+    Telemetry telemetry;
+
+    public TelemetryPipeline(Telemetry telemetry) {
+        this.telemetry = telemetry;
+    }
+
+    @Override
+    public Mat processFrame(Mat input) {
+        telemetry.addData("[Hello]", "World!");
+        telemetry.update();
+        return input; // Return the input mat
+    }
+
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="building-from-source"><a class="header" href="#building-from-source">Building from Source</a></h1>
+<p>Especially for the users that wish to use <em>EOCV-Sim</em> with Kotlin, which is a feature not currently supported with workspaces, you can instead opt to download the sim’s source code and build it after adding your own pipelines</p>
+<ol>
+<li>Make sure to have IntelliJ IDEA installed. Any IDE with Java Gradle support should work, but it is extremely recommended to use IntelliJ.</li>
+<li>Clone EOCV-Sim’s repository using Git, either from the command line;</li>
+</ol>
+<pre><code>git clone https://github.com/deltacv/EOCV-Sim
+</code></pre>
+<p>or using IntelliJ;</p>
+<figure><img src=".gitbook/assets/image (6).png" alt="" width="545"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (7).png" alt="" width="563"><figcaption>
+<p>Click on "clone" after entering the URL</p>
+</figcaption></figure>
+<ol start="3">
+<li>After importing EOCV-Sim into IntelliJ, you can start adding your own pipelines into the “TeamCode module”. Kotlin is already configured in the project, so you don’t need to do any additional setup;</li>
+</ol>
+<figure><img src=".gitbook/assets/image (8).png" alt="" width="395"><figcaption></figcaption></figure>
+<ol start="4">
+<li>Run EOCV-Sim using IntelliJ with the “Run Simulator” run configuration. <strong>You will need to close and run the simulator every time you make changes to your pipelines, you won’t be able to see any changes otherwise.</strong></li>
+</ol>
+<figure><img src=".gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,7 @@
+[book]
+title = "PaperVision Docs"
+authors = ["Sebastian Erives"]
+language = "en"
+
+[output.html]
+additional-css = ["custom.css"]
