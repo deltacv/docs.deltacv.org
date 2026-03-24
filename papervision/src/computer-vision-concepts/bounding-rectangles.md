@@ -23,7 +23,7 @@ In PaperVision, the "Bounding Rectangles" Node handles this task, taking a compl
 For objects that are tilted or rotated in the image, the simple Axis-Aligned box is often too big and inaccurate.
 
 * **What It Is**: This is the smallest rectangle that surrounds your object, and it is allowed to rotate to fit the object perfectly. It provides the tightest possible fit around the target.
-* **The Data You Get**: This box provides more detailed information: the center point of the object ($$xc​,yc​$$), the precise width and height of the rotated box, and, most importantly, the angle of rotation.
+* **The Data You Get**: This box provides more detailed information: the center point of the object (xc, yc), the precise width and height of the rotated box, and, most importantly, the angle of rotation.
 * **When to Use It**: Use this when the orientation (the angle) of the object is critical to your task (like aligning your robot to a specific side of a target) or when you need a highly precise measurement of the object's true size.
 
 In PaperVision, you'll use the "Bounding Rotated Rectangles" node to generate this more detailed and precise data from a list of contours

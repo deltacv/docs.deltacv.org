@@ -11,9 +11,7 @@ In computer vision, a mask is a binary image (pixels are either black or white).
 
 Masking is typically performed using the Bitwise AND operation, where the two input images—the Source Image and the Mask Image—are compared pixel by pixel:
 
-$$
-Result Pixel=Source Pixel∧Mask Pixel
-$$
+**Result Pixel = Source Pixel ∧ Mask Pixel**
 
 1. If the Mask Pixel is White (255): The source pixel is preserved, and its original color/value is copied to the final result.
 2. If the Mask Pixel is Black (0): The source pixel is blocked, and the final result pixel is set to black (0).

@@ -39,15 +39,15 @@ This node gives you control over two key visual properties:
 
 This defines the color of the drawing using standard RGB (Red, Green, Blue) values.
 
-* You can set the $$R$$, $$G$$, and $$B$$ values on a scale from $$0$$ to $$255$$.
-* For example, setting $$R=255$$, $$G=255$$, and $$B=0$$ will produce a bright Yellow line.
+* You can set the `R`, `G`, and `B` values on a scale from `0` to `255`.
+* For example, setting `R=255`, `G=255`, and `B=0` will produce a bright Yellow line.
 
 #### 2. Line Thickness
 
 This defines how many pixels wide the drawn line will be.
 
-* A thickness of $$1$$ results in a very thin line.
-* Increasing the number (e.g., $$3$$ or $$5$$) will create a thicker, more visible outline.
+* A thickness of `1` results in a very thin line.
+* Increasing the number (e.g., `3` or `5`) will create a thicker, more visible outline.
 
 > [!NOTE]
 > Another advantage of using "Line Parameters" is being able to share a single instance among different overlay nodes
@@ -58,5 +58,5 @@ This defines how many pixels wide the drawn line will be.
 
 The Drawing Nodes (like `Draw Rectangles`) are designed for quick visual feedback. When you look at the Parameters pin, you'll see a pencil icon next to it, which you can click to automatically link a new Line Parameters node.
 
-If you leave the Parameters pin unlinked to an external Line Parameters Node, the node uses its own default values. These are set to: $$Red=0$$, $$Blue=0$$, and $$Green=255$$.
+If you leave the Parameters pin unlinked to an external Line Parameters Node, the node uses its own default values. These are set to: `Red=0`, `Blue=0`, and `Green=255`.
 

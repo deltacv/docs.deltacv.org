@@ -2,7 +2,7 @@
 
 The **Crosshair Node** (found in the Classification & Filtering category) is a powerful, multi-purpose tool that brings together visualization and target selection in one block.
 
-It is designed to take the stream of filtered objects (Contours) from your detection pipeline and **classify** them based on their relationship to a central, adjustable $$+$$ crosshair drawn on the image.
+It is designed to take the stream of filtered objects (Contours) from your detection pipeline and **classify** them based on their relationship to a central, adjustable + crosshair drawn on the image.
 
 The node's dual function allows you to:
 
@@ -20,7 +20,7 @@ The Crosshair node requires the following inputs to function:
 | Overlay Input    | The image stream (usually the original camera feed) onto which the crosshair will be drawn.                                                                                                      |
 | Contours         | The list of detected objects (e.g., from a contour finder or filter) that you want to filter or select from.                                                                                     |
 | Scale            | An integer that controls the size (length) of the crosshair lines. This value is automatically scaled relative to the image size to ensure visibility.                                           |
-| Crosshair Offset | A vector ($$\Delta x, \Delta y$$) used to shift the crosshair away from the exact center of the image. This is useful for camera calibrations or if your target isn't centrally located.         |
+| Crosshair Offset | A vector (Δx, Δy) used to shift the crosshair away from the exact center of the image. This is useful for camera calibrations or if your target isn't centrally located.         |
 | Crosshair Line   | Defines the style of the crosshair. You can connect an external Line Parameters Node or use the internal editor to set the color and thickness. If unlinked, the color defaults to bright green. |
 
 ### Selection Modes (Classification)
