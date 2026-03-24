@@ -5,7 +5,7 @@ REQUIRED_TOOLS = [
     {
         "name": "mdbook",
         "repo": "rust-lang/mdBook",
-        "version": "latest",
+        "version": "v0.5.2",
         "asset_name": "mdbook-{version}-{suffix}"
     },
     {
