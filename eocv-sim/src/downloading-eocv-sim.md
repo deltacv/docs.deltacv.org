@@ -26,4 +26,4 @@ java -jar "EOCV-Sim-X.X.X-all.jar"
 
 Replacing the X.X.X by the version respectively, e.g 3.1.0
 
-## Interested in PaperVision? [Click here to go back to the documentation page.](https://app.gitbook.com/s/Fmz3GSY1piwyk8EqDogS/installing-papervision)
+## Interested in PaperVision? [Click here to go back to the documentation page.](/papervision/downloading-papervision.html)

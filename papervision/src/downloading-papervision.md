@@ -2,9 +2,9 @@
 
 ## Bundled with EOCV-Sim (recommended)
 
-PaperVision is bundled inside [EOCV-Sim](https://app.gitbook.com/s/-Mj4bZXgCUnwOLKFxDRi/), making an all-in-one vision development suite.
+PaperVision is bundled inside [EOCV-Sim](/eocv-sim/), making an all-in-one vision development suite.
 
-To download EOCV-Sim, [follow the steps in the documentation](https://app.gitbook.com/s/-Mj4bZXgCUnwOLKFxDRi/downloading-eocv-sim).
+To download EOCV-Sim, [follow the steps in the documentation](/eocv-sim/downloading-eocv-sim.html).
 
 > [!NOTE]
 > Locate to the PaperVision tab on the top right of EOCV-Sim to start making your own projects.
