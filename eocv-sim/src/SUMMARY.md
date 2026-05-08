@@ -19,7 +19,7 @@
 
 ## Workspaces
 
-* [What are workspaces?](workspaces/what-are-workspaces.md)
+* [Workspaces](workspaces/what-are-workspaces.md)
 * [VS Code and IntelliJ IDEA](workspaces/vscode-and-intellij.md)
 * [Android Studio](workspaces/android-studio.md)
 

@@ -2,9 +2,9 @@
 
 ## What is a pipeline?
 
-A pipeline is essentially an encapsulation of OpenCV image processing to do a certain thing. Most of the time, image processing requires operations to be done in series instead of in parallel; outputs from step A are fed into the inputs of step B, and outputs of step B are fed into step C, and so on. Hence, the term "Pipeline". `(definition extracted from the`[`EasyOpenCV docs`](https://github.com/OpenFTC/EasyOpenCV/blob/master/doc/user\_docs/pipelines\_overview.md)`)`
+A pipeline is essentially an encapsulation of OpenCV image processing for a specific purpose. Most image processing requires operations to run in sequence rather than in parallel — the output of step A feeds into step B, which feeds into step C, and so on. That's where the term "pipeline" comes from. ([EasyOpenCV docs](https://github.com/OpenFTC/EasyOpenCV/blob/master/doc/user\_docs/pipelines\_overview.md))
 
-EasyOpenCV implements this idea by using an abstract `OpenCvPipeline` class, from which you will extend when making your own pipeline. For example, here we have a pipeline that doesn't do any processing with the input image:
+EasyOpenCV implements this through an abstract `OpenCvPipeline` class that you extend when writing your own pipeline. Here's a minimal pipeline that passes the input image through unchanged:
 
 ```java
 import org.opencv.core.Mat;
@@ -20,13 +20,13 @@ public class EmptyPipeline extends OpenCvPipeline {
 }
 ```
 
-The `processFrame` function that comes from the extended OpenCvPipeline class always needs to be overridden, and it is where all your vision processing magic will happen. This function will be called when a new frame is dispatched from the camera (or from a static image or a video file, in the case of EOCV-Sim).
+The `processFrame` method from `OpenCvPipeline` must always be overridden — it's where all your vision processing happens. It gets called every time a new frame arrives from the camera (or from a static image or video file, in the case of EOCV-Sim).
 
-An OpenCV `Mat` is simply a **mat**rix that contains any type of data, which for our purposes will be an image most of the time, and they are the base for OpenCV image processing.&#x20;
+An OpenCV `Mat` (short for matrix) is the basic data structure used throughout OpenCV. For our purposes it holds image data, and it's the building block for all image processing operations.
 
-The Mat returned from processFrame function will be displayed on the live viewport. Since we are directly returning the input mat in the code before, the image coming from the camera will be displayed exactly as it is.
+Whatever `Mat` you return from `processFrame` is what gets displayed in the live viewport. In the example above, we're returning the input directly, so the image is shown as-is.
 
-The most simple processing that can be done in OpenCV is changing an image's color space to another one. The following pipeline simply takes the input mat and changes its color space to grayscale:
+The simplest processing you can do in OpenCV is converting an image's color space. The following pipeline converts the input to grayscale:
 
 ```java
 public class GrayPipeline extends OpenCvPipeline {
@@ -39,10 +39,8 @@ public class GrayPipeline extends OpenCvPipeline {
 }
 ```
 
-![The result of the GrayPipeline demonstrated before](../../assets/gray.png)
+![The result of the GrayPipeline demonstrated above](../../assets/gray.png)
 
-One thing to note here is the conversion code used, `Imgproc.COLOR_RGBA2GRAY`, which means in a more literal way "convert the input mat,which is in the RGBA color space, to the grayscale space".
+Note the conversion flag used: `Imgproc.COLOR_RGBA2GRAY`. This tells OpenCV to convert the input from the RGBA color space to grayscale.
 
-EasyOpenCV **ALWAYS** inputs RGBA frames to the pipeline (which stands for red, green, blue, alpha channels). This means that whenever you want to convert the input mat to another color space, you always need to specify to convert the mat from the RGBA color space to the desired one.&#x20;
-
-For example, `Imgproc.COLOR_RGBA2RGB` (remove the alpha channel), `Imgproc.COLOR_RGB2HSV`, `Imgproc.COLOR_RGB2YCrCb`, etc.
+EasyOpenCV **always** passes RGBA frames into the pipeline (red, green, blue, and alpha channels). This means any color space conversion needs to start from RGBA — for example, `Imgproc.COLOR_RGBA2RGB`, `Imgproc.COLOR_RGB2HSV`, `Imgproc.COLOR_RGB2YCrCb`, etc.

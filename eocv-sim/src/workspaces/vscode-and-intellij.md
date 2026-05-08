@@ -99,6 +99,6 @@ If you have EOCV-Sim opened, every time you make a change in IntellIj a new buil
 
 It will pop up a dialog asking if you want to open VS Code.
 
-* If you were following the VS Code guide, click on "Yes" once it asks if you want to open it, and go back to [step #5](vscode-and-intellij.md#vs-code).
-* If you were following the IntelliJ IDEA guide, click on "No" and go back to step #2.
+* If you were following the VS Code guide, click on "Yes" once it asks if you want to open it, and go back to [step 5 of the VS Code section](vscode-and-intellij.md#vs-code).
+* If you were following the IntelliJ IDEA guide, click on "No" and go back to [step 2 of the IntelliJ IDEA section](vscode-and-intellij.md#intellij-idea).
 

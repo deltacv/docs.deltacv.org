@@ -12,8 +12,8 @@ These algorithms can be used to detect and recognize faces, identify objects, cl
 
 ## So... How do I integrate it to FTC?
 
-The folks from OpenFTC developed a library to accomplish this in a very simple way, hiding the underlying complexities into a nice API.
+The folks from OpenFTC built a library to handle exactly this, wrapping the underlying complexities behind a clean API.
 
-[EasyOpenCV ](https://github.com/OpenFTC/EasyOpenCV)is a library that integrates OpenCV into the FTC SDK in a straightforward manner, providing the complete OpenCV Java library, plus multiple interfaces that give ease of access to internal phone cameras, or external webcams, and to be able to easily feed images from the real world to your OpenCV algorithm.
+[EasyOpenCV](https://github.com/OpenFTC/EasyOpenCV) integrates OpenCV into the FTC SDK in a straightforward way, bundling the full OpenCV Java library alongside interfaces for accessing internal phone cameras or external webcams and feeding their images into your pipeline.
 
-[Here we have an example](https://github.com/OpenFTC/EasyOpenCV/blob/master/examples/src/main/java/org/openftc/easyopencv/examples/InternalCamera2Example.java) of the EasyOpenCV API, for using the internal camera of a phone to take images and send them into an OpenCvPipeline algorithm, and it can [easily be applied to a webcam too](https://github.com/OpenFTC/EasyOpenCV/blob/master/examples/src/main/java/org/openftc/easyopencv/examples/WebcamExample.java).
+The EasyOpenCV repo includes examples for both [internal camera](https://github.com/OpenFTC/EasyOpenCV/blob/master/examples/src/main/java/org/openftc/easyopencv/examples/InternalCamera2Example.java) and [webcam](https://github.com/OpenFTC/EasyOpenCV/blob/master/examples/src/main/java/org/openftc/easyopencv/examples/WebcamExample.java) usage.

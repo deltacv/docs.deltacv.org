@@ -1,23 +1,21 @@
-# What are workspaces?
+# Workspaces
 
-## Introduction
-
-A workspace basically consists of a folder containing `.java` source files and resource files, which are compiled on-the-fly by EOCV-Sim. This removes the need of having to use Gradle for running slow builds, and even allows you to see code changes in real time within a few seconds, or even milliseconds!
+A workspace is a folder containing `.java` source files and resource files that EOCV-Sim compiles on-the-fly. This means you don't need to run Gradle builds — changes are picked up and applied within seconds.
 
 ![A OpenCvPipeline opened in VS Code with IntelliSense](../assets/screenshot\_2021-09-08\_13-29-02.png)
 
-## Using workspaces (without any supported IDE or text editor)
+## Selecting a workspace
 
-Workspaces in EOCV-Sim are very flexible, which means that you don't need any specific IDE or text editor, you just need to provide `.java` files that the simulator will compile. There's an `eocvsim_workspace.json` file which configures the build process, and will be explained next.
+Workspaces aren't tied to any specific IDE or text editor — you just need to point EOCV-Sim at a folder containing `.java` files. A `eocvsim_workspace.json` file in the folder controls the build process (covered in the next section).
 
-The simulator creates and selects by default a workspace in the user folder, `~/.eocvsim/default_workspace`, which contains a sample GrayscalePipeline.java that is compiled and added on runtime, but you can change it by doing the following steps:
+By default, the sim creates and uses a workspace at `~/.eocvsim/default_workspace`, which includes a sample `GrayscalePipeline.java`. To switch to a different folder:
 
-* Go under the "Pipelines" section, click the "Workspace" and finally "Select workspace". Or alternatively, you can also go to Workspace -> Select workspace
+* Go to the "Pipelines" section and click **Workspace → Select workspace**
 
 ![](../assets/eocvsim\_usage\_workspace\_select.gif)
 
-* Select a folder in the file explorer that pops up
+* Select a folder in the file explorer that opens
 
 ![](../assets/file-chooser-screenshot.png)
 
-* And you are done! The sim should select the folder as a workspace, create a `eocvsim_workspace.json` file if it doesn't exist in the selected folder, and build the `.java` files in the directory.
+* The sim will set the selected folder as the active workspace, generate a `eocvsim_workspace.json` if one doesn't exist, and compile the `.java` files inside.
