@@ -1,6 +1,6 @@
 <div class="hero-header">
-    <h1 class="hero-title">deltacv Documentation</h1>
-    <p class="hero-subtitle">The official documentation hub for all deltacv projects. Choose a sub-project below to get started.</p>
+    <h1 class="hero-title">The deltacv documentation</h1>
+    <p class="hero-subtitle">Official documentation hub for all deltacv projects. Choose a sub-project below to get started.</p>
 </div>
 <div class="card-container">
     <a href="papervision/" class="landing-card">

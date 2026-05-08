@@ -3,19 +3,21 @@ main img {
     margin: 0 auto;
     max-width: 85%;
     height: auto;
-    border-radius: 8px; /* Optional touch of styling */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional touch of styling */
+    border-radius: 8px;
+    /* Optional touch of styling */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optional touch of styling */
 }
 
 /* mdbook-blame styling */
-main > details:last-child {
+main>details:last-child {
     margin-top: 60px;
     padding-top: 20px;
     border-top: 1px solid var(--table-border-color);
     font-size: 0.85em;
 }
 
-main > details:last-child > summary {
+main>details:last-child>summary {
     cursor: pointer;
     font-style: italic;
     color: var(--sidebar-fg);
@@ -24,7 +26,7 @@ main > details:last-child > summary {
     outline: none;
 }
 
-main > details:last-child > blockquote {
+main>details:last-child>blockquote {
     margin: 15px 0 0 0;
     padding: 10px 15px;
     background-color: var(--sidebar-bg);
@@ -47,7 +49,7 @@ main > details:last-child > blockquote {
     text-align: center;
     max-width: 480px;
     width: 100%;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
 }
 
 .download-icon {
@@ -69,20 +71,20 @@ main > details:last-child > blockquote {
 .download-subtitle {
     margin: 0 0 1.5rem;
     opacity: 0.75;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
 }
 
 .download-btn {
     display: inline-block;
-    padding: 0.85rem 2.4rem;
+    padding: 0.75rem 2rem;
     background: var(--links);
     color: #fff !important;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     font-weight: 600;
     border-radius: 8px;
     text-decoration: none !important;
     transition: opacity 0.18s, transform 0.18s;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .download-btn:hover {
@@ -92,8 +94,8 @@ main > details:last-child > blockquote {
 
 .download-version {
     margin: 0.9rem 0 0.3rem;
-    font-size: 0.95rem;
-    opacity: 0.6;
+    font-size: 0.82rem;
+    opacity: 0.55;
     font-family: monospace;
 }
 

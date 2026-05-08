@@ -2,6 +2,7 @@
 title = "EOCV-Sim Docs"
 authors = ["Sebastian Erives"]
 language = "en"
+description = "A cross-platform simulator for EasyOpenCV pipelines — emulate webcam connections, preview pipeline states, and debug locally without a robot."
 
 [output.html]
 additional-css = ["custom.css"]

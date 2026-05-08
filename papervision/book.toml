@@ -2,6 +2,7 @@
 title = "PaperVision Docs"
 authors = ["Sebastian Erives"]
 language = "en"
+description = "A visual node-based computer vision pipeline editor for FTC — build and test complex vision pipelines interactively without writing any code."
 
 [output.html]
 additional-css = ["custom.css"]
