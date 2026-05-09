@@ -2,20 +2,28 @@
 
 ## Bundled with EOCV-Sim (recommended)
 
-PaperVision ships bundled inside EOCV-Sim — no separate download needed. Together they form a complete vision development suite: EOCV-Sim handles pipeline execution in the background while PaperVision gives you a visual, fully previewable node-based editor on top of it.
+PaperVision is designed to be used seamlessly alongside EOCV-Sim. Together they form a complete vision development suite: EOCV-Sim handles pipeline execution in the background while PaperVision gives you a visual, fully previewable node-based editor on top of it.
 
 <div class="promo-card">
-  <span class="promo-icon"><i class="fa-solid fa-laptop" aria-hidden="true"></i></span>
+  <span class="promo-icon"><i class="fa-solid fa-box-open" aria-hidden="true"></i></span>
   <div class="promo-body">
-    <p class="promo-title">Download via EOCV-Sim</p>
-    <p class="promo-desc">PaperVision is included in every EOCV-Sim release. Download EOCV-Sim to get both tools in a single package.</p>
+    <p class="promo-title">Included with EOCV-Sim</p>
+    <p class="promo-desc">PaperVision is bundled in every release — no separate download needed.</p>
   </div>
-  <a class="promo-btn" href="/eocv-sim/downloading-eocv-sim.html">Download EOCV-Sim →</a>
+  <a class="promo-btn" href="/eocv-sim/downloading-eocv-sim.html#from-papervision">Download EOCV-Sim →</a>
 </div>
 
+<span id="how-to-use"></span>
 Once launched, switch to the **PaperVision** tab in the top-right corner of the EOCV-Sim window to create and run your projects.
 
 <img src="assets/image (4) (1) (1).png" alt="PaperVision tab in EOCV-Sim" class="screenshot-sm">
+
+From here, you can:
+- **Instant Preview**: Simply click an existing project once in the list to activate its pipeline and view its output directly in the EOCV-Sim preview window.
+- **Create a New Project**: Click the "New" button at the bottom to start a fresh `.paperproj` file.
+- **Open the Editor**: Select your project and click "Open Selected Project" to launch the visual node editor.
+- **Run Pipelines**: PaperVision pipelines run automatically within EOCV-Sim, providing real-time feedback as you edit.
+
 
 ## Running from source (development)
 
