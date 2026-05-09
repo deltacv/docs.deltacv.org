@@ -100,4 +100,28 @@ main > details:last-child > blockquote {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 600px) {
+    .promo-card {
+        padding: 2rem 1.5rem;
+        gap: 1.2rem;
+    }
+
+    .promo-icon {
+        font-size: 3.5rem;
+    }
+
+    .promo-title {
+        font-size: 1.5rem;
+    }
+
+    .promo-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 2rem;
+        box-sizing: border-box;
+        white-space: normal;
+    }
+}
+
 

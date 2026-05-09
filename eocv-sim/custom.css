@@ -165,3 +165,25 @@ main>details:last-child>blockquote {
     opacity: 0.88;
     transform: translateY(-2px);
 }
+
+@media (max-width: 700px) {
+    .promo-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+        padding: 1.8rem 2rem;
+    }
+
+    .promo-icon {
+        font-size: 2.8rem;
+        align-self: flex-start;
+    }
+
+    .promo-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        white-space: normal;
+    }
+}
