@@ -29,19 +29,7 @@ def main():
     for src_dir, dest_subpath in modules.MDBOOK_MODULES.items():
         print(f"\n--- Building {src_dir} ---")
         module_full_path = os.path.join(root_dir, src_dir)
-        module_src_path = os.path.join(module_full_path, 'src')
         
-        # Copy root assets to module/src/assets
-        root_assets = os.path.join(root_dir, 'assets')
-        module_assets_path = os.path.join(module_src_path, 'assets')
-        if os.path.exists(root_assets):
-            if os.path.exists(module_assets_path):
-                shutil.rmtree(module_assets_path)
-            shutil.copytree(root_assets, module_assets_path)
-            
-            # Copy favicon-32x32.png as favicon.png for mdBook's native handling
-            shutil.copy2(os.path.join(root_assets, 'favicon-32x32.png'), os.path.join(module_src_path, 'favicon.png'))
-
         # Calculate destination directory inside /dist
         if dest_subpath:
             module_dist_path = os.path.join(dist_dir, dest_subpath)
@@ -50,17 +38,29 @@ def main():
             
         run_command(['mdbook', 'build', '-d', module_dist_path], cwd=module_full_path)
     
-    # Also copy assets to root dist for general use
+    # Merge global assets into dist/assets at the end
     root_assets = os.path.join(root_dir, 'assets')
     dist_assets = os.path.join(dist_dir, 'assets')
     if os.path.exists(root_assets):
-        print(f"\nCopying root assets to {dist_assets}...")
-        if os.path.exists(dist_assets):
-            shutil.rmtree(dist_assets)
-        shutil.copytree(root_assets, dist_assets)
-        # Also copy a favicon.png to the root dist just in case
+        print(f"\nMerging root assets into {dist_assets}...")
+        if not os.path.exists(dist_assets):
+            os.makedirs(dist_assets)
+        
+        # Copy individual files to avoid deleting existing content in dist/assets if it exists
+        for item in os.listdir(root_assets):
+            s = os.path.join(root_assets, item)
+            d = os.path.join(dist_assets, item)
+            if os.path.isdir(s):
+                if os.path.exists(d):
+                    shutil.rmtree(d)
+                shutil.copytree(s, d)
+            else:
+                shutil.copy2(s, d)
+        
+        # Also ensure favicons are available at the root dist
         shutil.copy2(os.path.join(root_assets, 'favicon-32x32.png'), os.path.join(dist_dir, 'favicon.png'))
-    
+        shutil.copy2(os.path.join(root_assets, 'favicon.ico'), os.path.join(dist_dir, 'favicon.ico'))
+
     print("\nSUCCESS! All documentation has been seamlessly built into the /dist directory.")
 
 if __name__ == '__main__':
