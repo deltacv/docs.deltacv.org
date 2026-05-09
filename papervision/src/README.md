@@ -8,7 +8,7 @@
 
 **Thank you for you interest in PaperVision!**
 
-PaperVision is designed to make computer vision more accessible, whether you're just starting out or optimizing complex pipelines for competition. Inspired by node-based workflows in Blender and Unreal Engine Blueprints, it offers an intuitive drag-and-drop interface for building vision pipelines.
+PaperVision is designed to make computer vision more accessible, whether you're just starting out or optimizing complex pipelines for competition. Inspired by node-based workflows in industry-leading interfaces, it offers an intuitive drag-and-drop interface for building vision pipelines.
 
 ![](https://raw.githubusercontent.com/deltacv/EOCV-Sim/refs/heads/main/EOCV-Sim/src/main/resources/images/papervision.gif)
 

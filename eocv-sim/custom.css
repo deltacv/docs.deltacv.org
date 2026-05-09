@@ -61,8 +61,8 @@ main>details:last-child>blockquote {
 }
 
 .download-title {
-    margin: 0 0 0.4rem;
-    font-size: 1.6rem;
+    margin: 0 0 0.5rem;
+    font-size: 2rem;
     font-weight: 700;
     border: none;
     padding: 0;
@@ -71,15 +71,15 @@ main>details:last-child>blockquote {
 .download-subtitle {
     margin: 0 0 1.5rem;
     opacity: 0.75;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
 }
 
 .download-btn {
     display: inline-block;
-    padding: 0.75rem 2rem;
+    padding: 0.85rem 2.5rem;
     background: var(--links);
     color: #fff !important;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     font-weight: 600;
     border-radius: 8px;
     text-decoration: none !important;
@@ -94,13 +94,74 @@ main>details:last-child>blockquote {
 
 .download-version {
     margin: 0.9rem 0 0.3rem;
-    font-size: 0.82rem;
+    font-size: 1rem;
     opacity: 0.55;
     font-family: monospace;
 }
 
 .download-note {
     margin: 0.4rem 0 0;
-    font-size: 0.82rem;
+    font-size: 1rem;
     opacity: 0.6;
+}
+
+/* ── PaperVision promo card ─────────────────────────────────── */
+.promo-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 3rem 0 1rem;
+    padding: 2.2rem 2.5rem;
+    background: var(--sidebar-bg);
+    border: 1px solid var(--table-border-color);
+    border-left: 5px solid var(--links);
+    border-radius: 14px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    flex-wrap: wrap;
+}
+
+.promo-icon {
+    font-size: 3.2rem;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.promo-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.promo-title {
+    margin: 0 0 0.35rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--fg);
+}
+
+.promo-desc {
+    margin: 0;
+    font-size: 1.1rem;
+    opacity: 0.75;
+    color: var(--fg);
+    line-height: 1.4;
+}
+
+.promo-btn {
+    flex-shrink: 0;
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    background: var(--links);
+    color: #fff !important;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none !important;
+    transition: opacity 0.18s, transform 0.18s;
+    white-space: nowrap;
+}
+
+.promo-btn:hover {
+    opacity: 0.88;
+    transform: translateY(-2px);
 }

@@ -3,10 +3,7 @@
 <div class="download-hero">
   <div class="download-card">
     <div class="download-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="72" height="72" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 3v13M7 11l5 5 5-5"/>
-        <path d="M3 19h18"/>
-      </svg>
+      <i class="fa-solid fa-download" style="font-size: 2em;" aria-hidden="true"></i>
     </div>
     <h2 class="download-title">EOCV-Sim</h2>
     <p class="download-subtitle">Download the latest release and get started in seconds.</p>
@@ -43,7 +40,7 @@
 
 ## Prerequisites: Java
 
-EOCV-Sim requires **Java 11 or newer** to run. If you don't have it installed, grab it from one of these sources:
+EOCV-Sim requires **Java 17 or newer** to run. If you don't have it installed, grab it from one of these sources:
 
 - [Oracle JDK](https://www.oracle.com/java/technologies/javase-downloads.html) — official, free for personal use
 - [Adoptium (Eclipse Temurin)](https://adoptium.net/) — recommended open-source alternative
@@ -54,7 +51,7 @@ Once installed, verify your Java version by opening a terminal and running:
 java -version
 ```
 
-It should print `11` or higher. If it doesn't, make sure your `JAVA_HOME` environment variable points to the correct installation.
+It should print `17` or higher. If it doesn't, make sure your `JAVA_HOME` environment variable points to the correct installation.
 
 ## Running EOCV-Sim
 
@@ -68,4 +65,11 @@ java -jar "EOCV-Sim-X.X.X-all.jar"
 
 Replace `X.X.X` with the actual version number, e.g. `3.1.0`.
 
-## Interested in PaperVision? [Click here to go back to the documentation page.](/papervision/downloading-papervision.html)
+<div class="promo-card">
+  <span class="promo-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></span>
+  <div class="promo-body">
+    <p class="promo-title">PaperVision is already included!</p>
+    <p class="promo-desc">PaperVision ships bundled inside EOCV-Sim — no separate download needed. Head to the PaperVision docs to start building visual pipelines right away.</p>
+  </div>
+  <a class="promo-btn" href="/papervision/downloading-papervision.html">Go to PaperVision Docs →</a>
+</div>

@@ -7,6 +7,12 @@ main img {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional touch of styling */
 }
 
+/* Smaller screenshot variant */
+img.screenshot-sm {
+    max-width: 52%;
+    margin: 1.5rem auto;
+}
+
 /* mdbook-blame styling */
 main > details:last-child {
     margin-top: 60px;
@@ -31,3 +37,67 @@ main > details:last-child > blockquote {
     border-left: 3px solid var(--table-border-color);
     border-radius: 0 4px 4px 0;
 }
+
+/* ── EOCV-Sim promo card ────────────────────────────────────── */
+.promo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    margin: 3.5rem auto;
+    padding: 3rem 2.5rem;
+    background: var(--sidebar-bg);
+    border: 1px solid var(--table-border-color);
+    border-top: 5px solid var(--links);
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+    text-decoration: none;
+    max-width: 600px;
+}
+
+.promo-icon {
+    font-size: 4.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.promo-body {
+    width: 100%;
+}
+
+.promo-title {
+    margin: 0 0 0.6rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--fg);
+}
+
+.promo-desc {
+    margin: 0 0 1rem;
+    font-size: 1.15rem;
+    opacity: 0.8;
+    color: var(--fg);
+    line-height: 1.5;
+}
+
+.promo-btn {
+    display: inline-block;
+    padding: 1.1rem 3.5rem;
+    background: var(--links);
+    color: #fff !important;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.promo-btn:hover {
+    opacity: 0.92;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+

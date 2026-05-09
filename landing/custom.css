@@ -68,9 +68,16 @@
     border-color: var(--links);
 }
 
+.card-header-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
 .card-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 0;
     display: inline-block;
 }
 
@@ -78,7 +85,7 @@
     font-size: 1.8rem;
     font-weight: 700;
     margin-top: 0;
-    margin-bottom: 12px;
+    margin-bottom: 0;
     color: var(--sidebar-fg);
     border-bottom: none !important;
     /* hide typical mdbook h2 underline */
