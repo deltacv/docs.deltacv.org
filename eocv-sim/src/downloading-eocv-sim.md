@@ -19,39 +19,104 @@ It should print `17` or higher. If it doesn't, make sure your `JAVA_HOME` enviro
 
 <div class="download-hero">
 <div class="download-card">
-<div class="download-icon">
-<i class="fa-solid fa-download" style="font-size: 2em;" aria-hidden="true"></i>
-</div>
-<h2 class="download-title">EOCV-Sim</h2>
-<p class="download-subtitle">Download the latest release and get started in seconds.</p>
+<h2 class="download-title"><i class="fa-solid fa-download" style="color: var(--links); margin-right: 0.95rem; font-size: 1.25em;" aria-hidden="true"></i>EOCV-Sim<span class="download-version" id="download-version"></span></h2>
 <a id="download-btn" class="download-btn" href="https://github.com/deltacv/EOCV-Sim/releases/latest" target="_blank">
 Download Latest
 </a>
-<p class="download-version" id="download-version">Fetching latest version…</p>
+<p class="download-note" id="download-note" style="display: none;"></p>
 </div>
 </div>
 
 <script>
 (function() {
+  function getTargetPlatform() {
+    var ua = navigator.userAgent;
+    var platform = navigator.platform;
+    
+    var isWin = /Win/i.test(platform) || /Windows/i.test(ua);
+    var isMac = /Mac/i.test(platform) || /Macintosh/i.test(ua);
+    var isLinux = /Linux/i.test(platform) || /Linux/i.test(ua);
+    
+    if (isWin) {
+      return { suffix: "winx86-64", name: "Windows (x64)" };
+    }
+    
+    if (isMac) {
+      var appleSilicon = false;
+      try {
+        var canvas = document.createElement("canvas");
+        var gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+        if (gl) {
+          var debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
+          if (debugInfo) {
+            var renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+            if (renderer && /Apple/i.test(renderer) && !/Intel/i.test(renderer)) {
+              appleSilicon = true;
+            }
+          }
+        }
+      } catch (e) {}
+      
+      if (appleSilicon) {
+        return { suffix: "macarm64", name: "macOS (ARM64)" };
+      } else {
+        return { suffix: "macx86-64", name: "macOS (Intel)" };
+      }
+    }
+    
+    if (isLinux) {
+      var isArm = /arm/i.test(ua) || /aarch64/i.test(ua) || /arm64/i.test(ua);
+      if (isArm) {
+        return { suffix: "linuxarm64", name: "Linux (ARM64)" };
+      } else {
+        return { suffix: "linuxx86-64", name: "Linux (x64)" };
+      }
+    }
+    
+    return null;
+  }
+
   fetch("https://api.github.com/repos/deltacv/EOCV-Sim/releases/latest")
     .then(function(r) { return r.json(); })
     .then(function(data) {
       var tag = data.tag_name || "";
       var assets = data.assets || [];
-      var jar = assets.find(function(a) {
-        return a.name && a.name.match(/EOCV-Sim-.*-all\.jar$/);
-      });
+      var platform = getTargetPlatform();
+      var jar = null;
+      
+      if (platform) {
+        var regex = new RegExp("EOCV-Sim-.*-" + platform.suffix + "\\.jar$", "i");
+        jar = assets.find(function(a) {
+          return a.name && regex.test(a.name);
+        });
+      }
+      
       var versionEl = document.getElementById("download-version");
       var btnEl = document.getElementById("download-btn");
+      var noteEl = document.getElementById("download-note");
+      
       if (versionEl && tag) {
-        versionEl.textContent = "Version " + tag;
-      }
-      if (btnEl && jar && jar.browser_download_url) {
-        btnEl.href = jar.browser_download_url;
-        btnEl.removeAttribute("target");
+        versionEl.textContent = (tag.charAt(0) === 'v' ? '' : 'v') + tag;
       }
       
       if (btnEl) {
+        if (jar && jar.browser_download_url) {
+          btnEl.href = jar.browser_download_url;
+          btnEl.removeAttribute("target");
+          btnEl.textContent = "Download for " + platform.name;
+          if (noteEl) {
+            noteEl.innerHTML = 'Not your platform? <a href="https://github.com/deltacv/EOCV-Sim/releases/latest" target="_blank">View all builds <i class="fa-solid fa-up-right-from-square" style="font-size: 0.8em; margin-left: 4px; vertical-align: middle;"></i></a>';
+            noteEl.style.display = "block";
+          }
+        } else {
+          btnEl.href = "https://github.com/deltacv/EOCV-Sim/releases/latest";
+          btnEl.textContent = "Download Latest";
+          if (noteEl) {
+            noteEl.innerHTML = 'Select your platform\'s build: <a href="https://github.com/deltacv/EOCV-Sim/releases/latest" target="_blank">View all releases <i class="fa-solid fa-up-right-from-square" style="font-size: 0.8em; margin-left: 4px; vertical-align: middle;"></i></a>';
+            noteEl.style.display = "block";
+          }
+        }
+        
         btnEl.addEventListener("click", function() {
           setTimeout(function() {
             var runSection = document.getElementById("running-eocv-sim");
@@ -62,7 +127,17 @@ Download Latest
         });
       }
     })
-    .catch(function() {});
+    .catch(function() {
+      var versionEl = document.getElementById("download-version");
+      var noteEl = document.getElementById("download-note");
+      if (versionEl) {
+        versionEl.textContent = "";
+      }
+      if (noteEl) {
+        noteEl.innerHTML = 'Grab the latest builds on the <a href="https://github.com/deltacv/EOCV-Sim/releases/latest" target="_blank">releases page <i class="fa-solid fa-up-right-from-square" style="font-size: 0.8em; margin-left: 4px; vertical-align: middle;"></i></a>.';
+        noteEl.style.display = "block";
+      }
+    });
 })();
 </script>
 
@@ -73,10 +148,10 @@ Once downloaded, double-click the jar file to launch it, just like any other exe
 You can also run it from the command line. Navigate to the folder containing the jar file using `cd`, then run:
 
 ```
-java -jar "EOCV-Sim-X.X.X-all.jar"
+java -jar "EOCV-Sim-X.X.X-[platform].jar"
 ```
 
-Replace `X.X.X` with the actual version number, e.g. `3.1.0`.
+Replace `X.X.X-[platform]` with the actual version and platform identifier of your downloaded file, e.g. `4.2.0-winx86-64`.
 
 <div class="promo-card" id="pv-promo">
 <span class="promo-icon" id="pv-eye-icon-container">
@@ -93,7 +168,7 @@ Replace `X.X.X` with the actual version number, e.g. `3.1.0`.
 Return to PaperVision
 </p>
 <p class="promo-desc" style="font-size: 1em; opacity: 1;">
-<strong>You should now return to the PaperVision documentation.</strong> The content that follows in the current guide focuses solely on EOCV-Sim and does not contain any content about the node editor.
+<strong>You should now return to the PaperVision documentation.</strong> The content that follows in the current guide focuses solely on EOCV-Sim and does not contain any information about the node editor.
 </p>
 </div>
 </div>
