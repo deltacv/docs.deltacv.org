@@ -2,7 +2,7 @@
 
 ## Prerequisites: Java
 
-EOCV-Sim requires **Java 17 or newer** to run. If you don't have it installed, grab it from one of these sources:
+EOCV-Sim requires **Java 25 or newer** to run. If you don't have it installed, grab it from one of these sources:
 
 - [Oracle JDK](https://www.oracle.com/java/technologies/javase-downloads.html) — official, free for personal use
 - [Adoptium (Eclipse Temurin)](https://adoptium.net/) — recommended open-source alternative
@@ -13,7 +13,7 @@ Once installed, verify your Java version by opening a terminal and running:
 java -version
 ```
 
-It should print `17` or higher. If it doesn't, make sure your `JAVA_HOME` environment variable points to the correct installation.
+It should print `25` or higher. If it doesn't, make sure your `JAVA_HOME` environment variable points to the correct installation.
 
 ## Download Latest Release
 
@@ -65,7 +65,7 @@ Download Latest
     }
     
     if (isLinux) {
-      var isArm = /arm/i.test(ua) || /aarch64/i.test(ua) || /arm64/i.test(ua);
+      var isArm = /arm|aarch64/i.test(ua) || /arm|aarch64/i.test(platform);
       if (isArm) {
         return { suffix: "linuxarm64", name: "Linux (ARM64)" };
       } else {
