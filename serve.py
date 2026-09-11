@@ -8,7 +8,17 @@ import download_tools
 # Ensure robust local local testing binaries
 download_tools.ensure_tools()
 
+import time
+
+last_build_time = 0
+
 def run_build():
+    global last_build_time
+    now = time.time()
+    if now - last_build_time < 2:
+        return
+    last_build_time = now
+
     print("\n[serve.py] Change detected or initial build! Rebuilding docs...")
     try:
         build.main()
@@ -43,11 +53,38 @@ def main():
         for path in possible_watches:
             if os.path.exists(path):
                 server.watch(path, run_build)
+                # Pre-populate mtimes so existing files don't trigger cascading rebuilds on startup
+                if path in server.watcher._tasks:
+                    task = server.watcher._tasks[path]
+                    if os.path.isfile(path):
+                        task['mtimes'][path] = os.path.getmtime(path)
+                    elif os.path.isdir(path):
+                        for r, _, files in os.walk(path):
+                            for f in files:
+                                fp = os.path.join(r, f)
+                                task['mtimes'][fp] = os.path.getmtime(fp)
                 print(f"[serve.py] Watching {path}")
+
+    # Set watcher start time to current time to avoid false positives on startup
+    server.watcher._start = time.time()
 
     print("\n[serve.py] Starting LiveReload server...")
     print("[serve.py] Access your unified docs at: http://127.0.0.1:3000\n")
     
+    # Configure custom 404 handler for local dev so unmatched URLs hit 404.html
+    class CustomStaticFileHandler(server.SFH):
+        def write_error(self, status_code, **kwargs):
+            if status_code == 404:
+                custom_404 = os.path.join(self.root, '404.html')
+                if os.path.exists(custom_404):
+                    self.set_header('Content-Type', 'text/html; charset=UTF-8')
+                    with open(custom_404, 'rb') as f:
+                        self.finish(f.read())
+                    return
+            super().write_error(status_code, **kwargs)
+
+    server.SFH = CustomStaticFileHandler
+
     # Serve the /dist directory with automatic live reloading injection
     server.serve(root=dist_dir, port=3000, host='127.0.0.1')
 

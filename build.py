@@ -40,7 +40,12 @@ def generate_redirect_file(target_path, destination_url):
 def setup_redirects(root_dir, dist_dir):
     print("\nSetting up legacy directory redirects (eocv-sim -> visionbench, papervision -> visiongraph)...")
     
-    # 1. Copy base redirect files from root folders if they exist
+    # 1. Root-level redirect files for paths requested without trailing slashes (e.g. /eocv-sim, /papervision)
+    generate_redirect_file(os.path.join(dist_dir, 'eocv-sim.html'), "/visionbench/")
+    generate_redirect_file(os.path.join(dist_dir, 'eocvsim.html'), "/visionbench/")
+    generate_redirect_file(os.path.join(dist_dir, 'papervision.html'), "/visiongraph/")
+
+    # 2. Copy base redirect files from root folders if they exist (preserves custom index.html and 404.html)
     for old_mod in ["eocv-sim", "papervision"]:
         src = os.path.join(root_dir, old_mod)
         dst = os.path.join(dist_dir, old_mod)
@@ -52,49 +57,82 @@ def setup_redirects(root_dir, dist_dir):
                 if os.path.isfile(s):
                     shutil.copy2(s, d)
 
-    # 2. Mirror all generated HTML files from visionbench to eocv-sim
+    # Also copy eocv-sim base redirects to eocvsim
+    eocvsim_dst = os.path.join(dist_dir, 'eocvsim')
+    os.makedirs(eocvsim_dst, exist_ok=True)
+    eocv_src = os.path.join(root_dir, 'eocv-sim')
+    if os.path.exists(eocv_src):
+        for item in os.listdir(eocv_src):
+            s = os.path.join(eocv_src, item)
+            d = os.path.join(eocvsim_dst, item)
+            if os.path.isfile(s):
+                shutil.copy2(s, d)
+
+    # 3. Mirror all generated HTML files from visionbench to eocv-sim
     vb_dist = os.path.join(dist_dir, 'visionbench')
     eocv_dist = os.path.join(dist_dir, 'eocv-sim')
     if os.path.exists(vb_dist):
         for root, dirs, files in os.walk(vb_dist):
             for file in files:
-                if file.endswith('.html'):
+                # Do not overwrite 404.html, keep the dedicated legacy 404 handler
+                if file.endswith('.html') and file != '404.html':
                     full_src = os.path.join(root, file)
                     rel_path = os.path.relpath(full_src, vb_dist)
                     rel_url = rel_path.replace('\\', '/')
-                    dest_url = f"/visionbench/{rel_url}"
+                    dest_url = "/visionbench/" if rel_path == "index.html" else f"/visionbench/{rel_url}"
                     
                     # Direct path in eocv-sim
                     target_file = os.path.join(eocv_dist, rel_path)
                     generate_redirect_file(target_file, dest_url)
+
+                    # Also support extensionless paths via directory index (e.g. /eocv-sim/features/telemetry)
+                    if not rel_path.endswith('index.html'):
+                        rel_no_ext = rel_path[:-5]
+                        dir_target = os.path.join(eocv_dist, rel_no_ext, 'index.html')
+                        generate_redirect_file(dir_target, dest_url)
                     
                     # Also support renamed files (e.g. downloading-eocv-sim.html -> downloading-visionbench.html)
                     legacy_rel = rel_path.replace('visionbench', 'eocv-sim')
                     if legacy_rel != rel_path:
                         legacy_target = os.path.join(eocv_dist, legacy_rel)
                         generate_redirect_file(legacy_target, dest_url)
+                        if not legacy_rel.endswith('index.html'):
+                            legacy_no_ext = legacy_rel[:-5]
+                            legacy_dir_target = os.path.join(eocv_dist, legacy_no_ext, 'index.html')
+                            generate_redirect_file(legacy_dir_target, dest_url)
 
-    # 3. Mirror all generated HTML files from visiongraph to papervision
+    # 4. Mirror all generated HTML files from visiongraph to papervision
     vg_dist = os.path.join(dist_dir, 'visiongraph')
     pv_dist = os.path.join(dist_dir, 'papervision')
     if os.path.exists(vg_dist):
         for root, dirs, files in os.walk(vg_dist):
             for file in files:
-                if file.endswith('.html'):
+                # Do not overwrite 404.html, keep the dedicated legacy 404 handler
+                if file.endswith('.html') and file != '404.html':
                     full_src = os.path.join(root, file)
                     rel_path = os.path.relpath(full_src, vg_dist)
                     rel_url = rel_path.replace('\\', '/')
-                    dest_url = f"/visiongraph/{rel_url}"
+                    dest_url = "/visiongraph/" if rel_path == "index.html" else f"/visiongraph/{rel_url}"
                     
                     # Direct path in papervision
                     target_file = os.path.join(pv_dist, rel_path)
                     generate_redirect_file(target_file, dest_url)
+
+                    # Also support extensionless paths via directory index (e.g. /papervision/downloading-papervision)
+                    if not rel_path.endswith('index.html'):
+                        rel_no_ext = rel_path[:-5]
+                        dir_target = os.path.join(pv_dist, rel_no_ext, 'index.html')
+                        generate_redirect_file(dir_target, dest_url)
                     
                     # Also support renamed files (e.g. downloading-papervision.html -> downloading-visiongraph.html)
                     legacy_rel = rel_path.replace('visiongraph', 'papervision')
                     if legacy_rel != rel_path:
                         legacy_target = os.path.join(pv_dist, legacy_rel)
                         generate_redirect_file(legacy_target, dest_url)
+                        if not legacy_rel.endswith('index.html'):
+                            legacy_no_ext = legacy_rel[:-5]
+                            legacy_dir_target = os.path.join(pv_dist, legacy_no_ext, 'index.html')
+                            generate_redirect_file(legacy_dir_target, dest_url)
 
 def main():
     root_dir = os.path.dirname(os.path.abspath(__file__))
