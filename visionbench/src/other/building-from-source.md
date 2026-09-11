@@ -6,7 +6,7 @@ Especially for the users that wish to use _VisionBench_ with Kotlin, which is a 
 2. Clone VisionBench's repository using Git, either from the command line;
 
 ```
-git clone https://github.com/deltacv/VisionBench
+git clone https://github.com/deltacv/EOCV-Sim
 ```
 
 or using IntelliJ;

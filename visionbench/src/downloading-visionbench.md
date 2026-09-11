@@ -20,7 +20,7 @@ It should print `25` or higher. If it doesn't, make sure your `JAVA_HOME` enviro
 <div class="download-hero">
 <div class="download-card">
 <h2 class="download-title"><i class="fa-solid fa-download" style="color: var(--links); margin-right: 0.95rem; font-size: 1.25em;" aria-hidden="true"></i>VisionBench<span class="download-version" id="download-version"></span></h2>
-<a id="download-btn" class="download-btn" href="https://github.com/deltacv/VisionBench/releases/latest" target="_blank">
+<a id="download-btn" class="download-btn" href="https://github.com/deltacv/EOCV-Sim/releases/latest" target="_blank">
 Download Latest
 </a>
 <p class="download-note" id="download-note" style="display: none;"></p>
@@ -76,7 +76,7 @@ Download Latest
     return null;
   }
 
-  fetch("https://api.github.com/repos/deltacv/VisionBench/releases/latest")
+  fetch("https://api.github.com/repos/deltacv/EOCV-Sim/releases/latest")
     .then(function(r) { return r.json(); })
     .then(function(data) {
       var tag = data.tag_name || "";
@@ -85,12 +85,12 @@ Download Latest
       var jar = null;
       
       if (platform) {
-        var regex = new RegExp("VisionBench-.*-" + platform.suffix + "\\.jar$", "i");
+        var regex = new RegExp("EOCV-Sim-.*-" + platform.suffix + "\\.jar$", "i");
         jar = assets.find(function(a) {
           return a.name && regex.test(a.name);
         });
         if (!jar) {
-          var fallbackRegex = new RegExp("EOCV-Sim-.*-" + platform.suffix + "\\.jar$", "i");
+          var fallbackRegex = new RegExp("VisionBench-.*-" + platform.suffix + "\\.jar$", "i");
           jar = assets.find(function(a) {
             return a.name && fallbackRegex.test(a.name);
           });
@@ -111,14 +111,14 @@ Download Latest
           btnEl.removeAttribute("target");
           btnEl.textContent = "Download for " + platform.name;
           if (noteEl) {
-            noteEl.innerHTML = 'Not your platform? <a href="https://github.com/deltacv/VisionBench/releases/latest" target="_blank">View all builds <i class="fa-solid fa-up-right-from-square" style="font-size: 0.8em; margin-left: 4px; vertical-align: middle;"></i></a>';
+            noteEl.innerHTML = 'Not your platform? <a href="https://github.com/deltacv/EOCV-Sim/releases/latest" target="_blank">View all builds <i class="fa-solid fa-up-right-from-square" style="font-size: 0.8em; margin-left: 4px; vertical-align: middle;"></i></a>';
             noteEl.style.display = "block";
           }
         } else {
-          btnEl.href = "https://github.com/deltacv/VisionBench/releases/latest";
+          btnEl.href = "https://github.com/deltacv/EOCV-Sim/releases/latest";
           btnEl.textContent = "Download Latest";
           if (noteEl) {
-            noteEl.innerHTML = 'Select your platform\'s build: <a href="https://github.com/deltacv/VisionBench/releases/latest" target="_blank">View all releases <i class="fa-solid fa-up-right-from-square" style="font-size: 0.8em; margin-left: 4px; vertical-align: middle;"></i></a>';
+            noteEl.innerHTML = 'Select your platform\'s build: <a href="https://github.com/deltacv/EOCV-Sim/releases/latest" target="_blank">View all releases <i class="fa-solid fa-up-right-from-square" style="font-size: 0.8em; margin-left: 4px; vertical-align: middle;"></i></a>';
             noteEl.style.display = "block";
           }
         }
@@ -140,7 +140,7 @@ Download Latest
         versionEl.textContent = "";
       }
       if (noteEl) {
-        noteEl.innerHTML = 'Grab the latest builds on the <a href="https://github.com/deltacv/VisionBench/releases/latest" target="_blank">releases page <i class="fa-solid fa-up-right-from-square" style="font-size: 0.8em; margin-left: 4px; vertical-align: middle;"></i></a>.';
+        noteEl.innerHTML = 'Grab the latest builds on the <a href="https://github.com/deltacv/EOCV-Sim/releases/latest" target="_blank">releases page <i class="fa-solid fa-up-right-from-square" style="font-size: 0.8em; margin-left: 4px; vertical-align: middle;"></i></a>.';
         noteEl.style.display = "block";
       }
     });
@@ -154,7 +154,7 @@ Once downloaded, double-click the jar file to launch it, just like any other exe
 You can also run it from the command line. Navigate to the folder containing the jar file using `cd`, then run:
 
 ```
-java -jar "VisionBench-X.X.X-[platform].jar"
+java -jar "EOCV-Sim-X.X.X-[platform].jar"
 ```
 
 Replace `X.X.X-[platform]` with the actual version and platform identifier of your downloaded file, e.g. `4.2.0-winx86-64`.
