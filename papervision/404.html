@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting to VisionGraph...</title>
+    <meta http-equiv="refresh" content="0; url=/visiongraph/">
+    <link rel="canonical" href="https://docs.deltacv.org/visiongraph/">
+    <script>
+        (function() {
+            var path = window.location.pathname;
+            var search = window.location.search || '';
+            var hash = window.location.hash || '';
+            var target = path.replaceAll('papervision', 'visiongraph');
+            if (target === path || target === '/visiongraph' || target === '/visiongraph/') {
+                target = '/visiongraph/';
+            }
+            window.location.replace(target + search + hash);
+        })();
+    </script>
+</head>
+<body>
+    <p>Redirecting to <a id="redir-link" href="/visiongraph/">VisionGraph</a>...</p>
+    <script>
+        var path = window.location.pathname;
+        var target = path.replaceAll('papervision', 'visiongraph');
+        if (target === path || target === '/visiongraph' || target === '/visiongraph/') {
+            target = '/visiongraph/';
+        }
+        document.getElementById('redir-link').href = target + window.location.search + window.location.hash;
+    </script>
+</body>
+</html>

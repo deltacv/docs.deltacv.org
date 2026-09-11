@@ -3,5 +3,5 @@
 * [Home](README.md)
 
 ## deltacv Projects
-* [PaperVision](papervision-redir.md)
-* [EOCV-Sim](eocvsim-redir.md)
+* [VisionGraph](visiongraph-redir.md)
+* [VisionBench](visionbench-redir.md)

@@ -2,7 +2,7 @@
 title = "deltacv docs"
 authors = ["Sebastian Erives"]
 language = "en"
-description = "Official documentation hub for all deltacv projects — PaperVision and EOCV-Sim."
+description = "Official documentation hub for all deltacv projects — VisionGraph and VisionBench."
 src = "src"
     
 [build]

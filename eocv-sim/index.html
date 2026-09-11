@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting to VisionBench...</title>
+    <meta http-equiv="refresh" content="0; url=/visionbench/">
+    <link rel="canonical" href="https://docs.deltacv.org/visionbench/">
+    <script>
+        (function() {
+            var path = window.location.pathname;
+            var search = window.location.search || '';
+            var hash = window.location.hash || '';
+            var target = path
+                .replaceAll('eocv-sim', 'visionbench')
+                .replaceAll('eocvsim', 'visionbench');
+            if (target === path || target === '/visionbench' || target === '/visionbench/') {
+                target = '/visionbench/';
+            }
+            window.location.replace(target + search + hash);
+        })();
+    </script>
+</head>
+<body>
+    <p>Redirecting to <a id="redir-link" href="/visionbench/">VisionBench</a>...</p>
+    <script>
+        var path = window.location.pathname;
+        var target = path
+            .replaceAll('eocv-sim', 'visionbench')
+            .replaceAll('eocvsim', 'visionbench');
+        if (target === path || target === '/visionbench' || target === '/visionbench/') {
+            target = '/visionbench/';
+        }
+        document.getElementById('redir-link').href = target + window.location.search + window.location.hash;
+    </script>
+</body>
+</html>
